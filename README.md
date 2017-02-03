@@ -1,4 +1,4 @@
-Pour la rédaction de la feuille de route, nous aurons besoin d'une répartition des tâches, d'un diagramme de Gantt et d'un certain nombre d'articles.
+Pour la rédaction de la [feuille de route](https://docs.google.com/document/d/1hVKvKnYavUa3t5YR7DXdv8axV_xTp4d7cR52NmEoBZ4/edit), nous aurons besoin d'une répartition des tâches, d'un diagramme de Gantt et d'un certain nombre d'articles.
 
 Je vous propose de mettre votre prénom au niveau de la tâche dont vous allez/voulez vous occuper (@nom).
 
