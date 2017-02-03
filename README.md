@@ -18,7 +18,8 @@ Tâches à faire :
       - Nettoyage du texte.
       - Lier mots composés par un (_) se basant sur une référence (liste de mots composés).
       -  Considérations morphologiques : 
-      - 		Flexionnelle : Remplacer verbes conjugués par leurs infinitifs.
-        		Dérivationnelle : (???) 
+      
+      		Flexionnelle : Remplacer verbes conjugués par leurs infinitifs.
+       		Dérivationnelle : (???) 
 
   
