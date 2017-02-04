@@ -2,7 +2,6 @@ Pour la rédaction de la [feuille de route](https://docs.google.com/document/d/1
 
 Je vous propose de mettre votre prénom au niveau de la tâche dont vous allez/voulez vous occuper (@nom).
 
-Consultez/modifiez le fichier Documentation.md pour
 
 Tâches à faire : 
    - [Documentation](Documentation.md) (@Tous).
