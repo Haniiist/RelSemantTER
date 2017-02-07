@@ -13,7 +13,7 @@
 
 - Jeuxdemots : 
    - Récupérer la liste des mots de jeuxdemots.
-   - API Requester.
+   - [API Requester](https://drive.google.com/file/d/0BzdfugCnDDsIOE04X2Voc1hyXzQ/view).
 	
 
 - Extraire connaissances de relations : 
@@ -23,6 +23,7 @@
 - Contraintes sémantiques : 
 
    - Enlever l'ambiguité d'une relation exple : 
+			
 			La robe de la fille.
 			La roue de la voiture. 
 			possessive ou partitative ??
@@ -45,7 +46,7 @@
 
 	- Nettoyage : 
 
-		Virer les balises.
+	   - Virer les balises.
 
 	- Mots composés : 
 
