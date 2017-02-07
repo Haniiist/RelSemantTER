@@ -14,11 +14,12 @@ Tâches à faire :
    - Exploiter l’API Java de Wikipédia pour extraire les pages du portail de santé. Voir [Wiki-java](https://github.com/MER-C/wiki-java/wiki/Extended-documentation)
    - Prétraitements : 
 
-      - Nettoyage du texte.
-      - Lier mots composés par un (_) se basant sur une référence (liste de mots composés).
-      -  Considérations morphologiques : 
-      
-      		Flexionnelle : Remplacer verbes conjugués par leurs infinitifs.
-       		Dérivationnelle : (???) 
+	- [Lemmatisation](Lemmatisation.md).
+	  
+	- Nettoyage : 
 
-  
+	   - Virer les balises.
+
+	- [Mots composés](Mots_Composés.md)
+
+	  
