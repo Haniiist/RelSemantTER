@@ -16,9 +16,7 @@ Tâches à faire :
 
 	- [Lemmatisation](Lemmatisation.md).
 	  
-	- Nettoyage : 
-
-	   - Virer les balises.
+	- [Parser] (Parser.java).
 
 	- [Mots composés](Mots_Composés.md)
 
