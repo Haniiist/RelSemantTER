@@ -14,7 +14,7 @@ Tâches à faire :
    - Schéma de la base de données des relations sémantiques.
    - [Page Web analyse texte.](AnalyseurWeb.md)
    - Exploiter l’API Java de Wikipédia pour extraire les pages du portail de santé. Voir [Wiki-java.](https://github.com/MER-C/wiki-java/wiki/Extended-documentation)(Done by @Mehdi)
-   			Edit : Le script d'extraction est dans la classe [Extraction.java](RelSem/src/Extraction.java), il est à utiliser avec l'implémentation Java de l'API (lien plus haut).
+      - Edit : Le script d'extraction est dans la classe [Extraction.java](RelSem/src/Extraction.java), il est à utiliser avec l'implémentation Java de l'API (lien plus haut).
    - [Analyseur de texte ; recherche des patrons définis.]RelSem/src/Analyseur.java)(@Hani)
    - Prétraitements : 
 
