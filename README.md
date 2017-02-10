@@ -12,7 +12,7 @@ Tâches à faire :
    - Construire des patrons pour chaque type de relation.
    - Schéma de la base de données des relations sémantiques.
    - Exploiter l’API Java de Wikipédia pour extraire les pages du portail de santé. Voir [Wiki-java](https://github.com/MER-C/wiki-java/wiki/Extended-documentation) (@Mehdi)
-   	Edit : le script d'extraction est dans la classe Extraction.java(Extraction.java), il est à utiliser avec l'implémentation Java de l'API (lien plus haut). 
+   * Edit : le script d'extraction est dans la classe Extraction.java, il est à utiliser avec l'implémentation Java de l'API (lien plus haut). 
    - Prétraitements : 
 
 	- [Lemmatisation](Lemmatisation.md).
