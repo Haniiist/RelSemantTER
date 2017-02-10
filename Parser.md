@@ -4,4 +4,3 @@ Suivi de la programation du parser. Détails et avancées.
 	   - Décider du format de récupération (HTML/XML/Formatage de Wikipédia).
 	   - Essayer d'exploiter un parser existant. Sinon, en écrire un.
 	   
-	   
