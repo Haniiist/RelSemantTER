@@ -22,6 +22,6 @@ Tâches à faire :
 	  
 	- [Parser] (Parser.md)/[Code.](RelSem/src/Analyseur.java)
 
-	- [Mots composés](Mots_Composés.md)/[Code.](RelSem/src/Analyseur.java)(@Massi)
+	- [Mots composés](Mots_Composés.md)/[Code.](RelSem/src/motsCompose.java)(@Massi)
 
 	  
