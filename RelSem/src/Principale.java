@@ -14,8 +14,8 @@ public class Principale {
 		Analyseur analyseurDeTest=new Analyseur("Text.txt");
 		analyseurDeTest.analyser();
 		for (Relation relation : analyseurDeTest.getRelations_trouvees()) {
-			System.out.println("Relation de type "+relation.getType()+", entre les termes : "
-											+relation.getTerm1()+" et "+relation.getTerm2());
+			System.out.println("Relation : "+relation.getType()+"("
+											+relation.getTerm1()+","+relation.getTerm2()+")");
 		}
 	}
 	
