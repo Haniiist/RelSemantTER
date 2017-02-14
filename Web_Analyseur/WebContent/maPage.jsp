@@ -1,6 +1,6 @@
 <%@ page import = "Analyser.*" %>
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
@@ -11,10 +11,23 @@
   <br><br><br>
 <form action="maPage.jsp">
   Entrez le texte à analyser :<br><br>
-  <input type="text" name="inputText" value="La fille a des boucles_d'oreilles">
+  <textarea rows="6" cols="50" name="inputText">
+<%if (request.getParameter("inputText")==null){%>
+Le rastafarisme est une sorte de philosophie.
+Le lapin est un animal.
+La fièvre est causée par faible_immunité.
+La fille a des boucles_d'oreilles.
+Le lapin a des oreilles.
+<% } 
+   else
+   		{
+	   		out.println(request.getParameter("inputText"));
+   		}
+%>
+</textarea>
   <br><br><br>
-  <input type="submit" value="Submit">
-  <br><br><br><br><br>
+  <input type="submit" value="Extraire relations sémantiques">
+  <br><br><br>
   
 <%
 		if (request.getParameter("inputText")!=null)
@@ -24,9 +37,10 @@
 			Analyseur analyseurDeTest=new Analyseur();
 			analyseurDeTest.setText(request.getParameter("inputText"));
 			analyseurDeTest.analyser();
+			out.println("Relations extraites :<br><br>");
 			for (Relation relation : analyseurDeTest.getRelations_trouvees()) {
-				out.println("Relation : "+relation.getType()+"("
-											+relation.getTerm1()+","+relation.getTerm2()+")");
+				out.println(relation.getType()+"("
+											+relation.getTerm1()+","+relation.getTerm2()+")<br>");
 				}
 			
 		}
