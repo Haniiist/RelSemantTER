@@ -6,6 +6,7 @@ Page web analysant un texte en entrée. Affiche les relations extraites. Voir Pr
 	   - Télécharger le répertoire du projet [Web_Analyseur](/Web_Analyseur).
 	   - Importer le projet dans Eclipse.
 	   - Faire des tests en définissant de nouveaux patrons dans le fichier /WebContent/WEB-INF/Patterns.txt.
+	   
 	   			Remarque : Garder le format du fichier ; 
 	   			{{type de relation}} :
 	   			{{Patron1}}
