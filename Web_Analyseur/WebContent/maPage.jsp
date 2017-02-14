@@ -11,8 +11,7 @@
   <br><br><br>
 <form action="maPage.jsp">
   Entrez le texte à analyser :<br><br>
-  <textarea rows="6" cols="50" name="inputText">
-<%if (request.getParameter("inputText")==null){%>
+  <textarea rows="4" cols="50" name="inputText"><%if (request.getParameter("inputText")==null){%>
 Le rastafarisme est une sorte de philosophie.
 Le lapin est un animal.
 La fièvre est causée par faible_immunité.
@@ -23,8 +22,7 @@ Le lapin a des oreilles.
    		{
 	   		out.println(request.getParameter("inputText"));
    		}
-%>
-</textarea>
+%></textarea>
   <br><br><br>
   <input type="submit" value="Extraire relations sémantiques">
   <br><br><br>
