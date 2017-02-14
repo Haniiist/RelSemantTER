@@ -1,0 +1,13 @@
+Hiérarchie : 
+$x est un $y 
+$x est une sorte de $y 
+
+Méronymie :
+$x a des $y 
+
+Causalité : 
+$x est causé par $y 
+$x est causée par $y 
+
+Possession : 
+$x a des $y 
