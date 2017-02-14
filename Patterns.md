@@ -5,14 +5,14 @@ Définitions des types de relations et patrons.
 	   - $x est une sorte de $y 
 	   - $x est une $y 
 
--Méronymie :
+- Méronymie :
 	   - $x a des $y 
 
--Causalité : 
+- Causalité : 
 	   - $x est causé par $y 
 	   - $x est causée par $y 
 
--Possession : 
+- Possession : 
 	   - $x a des $y 
 
 	   
