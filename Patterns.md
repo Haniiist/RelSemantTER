@@ -1,18 +1,180 @@
 Définitions des types de relations et patrons.
-
+ 
 - Hiérarchie : 
+	   - $x est $y 
 	   - $x est un $y 
-	   - $x est une sorte de $y 
-	   - $x est une $y 
+	   - $x est aussi un $y 
+	   - $x est une $y
+	   - $x est aussi une $y  
+	   - $x est une sorte de $y
+	   - $x est un genre de $y 
+	   - $x est de la famille des $y
+	   - $x est de la famille de la $y
+	   - $x est de la famille du $y
+
+- Holonymie :
+	   - $x a des $y 
+	   - $x a un $y
+	   - $x a une $y  
+	   - $x composé de $y et de $z
+	   - $x composé de $y
+	   - $x constitué de $y
+	   - $x composée de $y
+	   - $x constituée de $y
+	   - $x composé de la $y
+	   - $x constitué de la $y
+	   - $x composée de la $y
+	   - $x constituée de la $y
+	   - $x composé du $y
+	   - $x constitué du $y
+	   - $x composé d'un $y
+	   - $x constitué d'un $y
+	   - $x composé d'une $y
+	   - $x constitué d'une $y
+	   - $x composée du $y
+	   - $x constituée du $y
+	   - $x composée d'un $y
+	   - $x constituée d'un $y
+	   - $x composée d'une $y
+	   - $x constituée d'une $y
+	   - $x est composé de $y
+	   - $x est constitué de $y
+	   - $x est composée de $y
+	   - $x est constituée de $y
+	   - $x est composé de la $y
+	   - $x est constitué de la $y
+	   - $x est composée de la $y
+	   - $x est constituée de la $y
+	   - $x est composé du $y
+	   - $x est constitué du $y
+	   - $x est composée du $y
+	   - $x est constituée du $y
+	   - $x est composé d'un $y
+	   - $x est constitué d'un $y
+	   - $x est composée d'un $y
+	   - $x est constituée d'un $y
+	   - $x est composé d'une $y
+	   - $x est constitué d'une $y
+	   - $x est composée d'une $y
+	   - $x est constituée d'une $y
+	   - $x constitué d'une $y et d'un $z
+	   - $x a comme partie le $y 
+	   - $x se compose de $y
+	   - $x a comme partie la $y 
+	   - $x se compose de la $y
+	   - $x se compose du $y
 
 - Méronymie :
-	   - $x a des $y 
+	   - $x fait partie du $y
+	   - $x fait partie de la $y
+	   - $x fait partie des $y
+	   - $x fait partie de $y
+	   - $x compose le $y
+	   - $x compose la $y
+	   - $x compose les $y
+	   - $x forme le $y
+	   - $x forme la $y
+	   - $x forme les $y
+	   - $x constitue le $y
+	   - $x constitue la $y
+	   - $x constitue les $y
+	   - $x est partie de $y
+	   - $x est partie du $y
+	   - $x est partie de la $y
+	   - $x est une partie de $y
+	   - $x est une partie du $y
+	   - $x est une partie de la $y
 
-- Causalité : 
+- Causalité/Cause : 
+	   - $x cause $y 
+	   - $x affecte $y
+	   - $x provoque $y
+	   - $x affecte le $y
+	   - $x affecte la $y
+	   - $x affecte les $y
+	   - $x n’affecte que les $y
+	   - $x n’affecte que la $y
+	   - $x n’affecte que le $y
+	   - $x provient du $y
+	   - $x provoque le $y
+	   - $x provient de la $y
+	   - $x provoque la $y 
+	   - $x déclenchant un $y 
+	   - $x peut produire un $y
+	   - $x déclenchant une $y 
+	   - $x peut produire une $y
+	   - $x déclenchant des $y 
+	   - $x peut produire des $y
+	   - $x déclenchant la $y 
+	   - $x peut produire la $y
+	   - $x déclenchant les $y 
+	   - $x peut produire les $y
+	   - $x menant aux $y
+	   - $x menant au $y
+	   - $x menant à la $y
+	   - $x menant à un $y
+	   - $x menant à une $y
+
+- Causalité/Effet : 
+	   - $x dû à $y
+	   - $x dû à un $y
+	   - $x dû à une $y
+	   - $x dû à des $y
+	   - $x dû au $y
+	   - $x dû aux $y
+	   - $x dûe à $y
+	   - $x dûe à un $y
+	   - $x dûe à une $y
+	   - $x dûe à des $y
+	   - $x dûe au $y
+	   - $x dûe aux $y
 	   - $x est causé par $y 
 	   - $x est causée par $y 
+	   - $x est causé par le $y 
+	   - $x est causée par le $y
+	   - $x est causé par la $y 
+	   - $x est causée par la $y
+	   - $x est causé par les $y 
+	   - $x est causée par les $y
+	   - $x est causé par un $y 
+	   - $x est causée par un $y
+	   - $x est causé par une $y 
+	   - $x est causée par une $y
+	   - $x est causé par des $y 
+	   - $x est causée par des $y
+	   - $x est provoqué par $y
+	   - $x est provoquée par $y
+	   - $x est provoqué par le $y 
+	   - $x est provoquée par le $y
+	   - $x est provoqué par la $y 
+	   - $x est provoquée par la $y
+	   - $x est provoqué par les $y 
+	   - $x est provoquée par les $y
+	   - $x est provoqué par un $y 
+	   - $x est provoquée par un $y
+	   - $x est provoqué par une $y 
+	   - $x est provoquée par une $y
+	   - $x est provoqué par des $y 
+	   - $x est provoquée par des $y
 
 - Possession : 
-	   - $x a des $y 
+	   - $x a un $y
+	   - $x a une $y
+	   - $x a des $y
+
+- Caractérisation :
+	   - $x est caractérisé par $y
+	   - $x est caractérisé par un $y
+	   - $x est caractérisé par une $y
+	   - $x se caractérise par $y
+	   - $x se caractérise par un $y
+	   - $x se caractérise par une $y
+
+- Opposition :
+	   - $x est l'inverse de $y
+
+- Localisation :
+	   - $x au niveau de $y
+	   - $x se trouve dans $y
 
 	   
