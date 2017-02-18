@@ -7,16 +7,22 @@
 <title>Web Analyser</title>
 </head>
 <body>
-<h2>Démo du méchanisme d'extraction</h2>
+<div style="margin: 0 auto; width: 43%"><h2>Démo du méchanisme d'extraction</h2></div>
+<div style="margin: 0 auto; width: 50%">
   <br><br><br>
 <form action="maPage.jsp">
   Entrez le texte à analyser :<br><br>
-  <textarea rows="4" cols="50" name="inputText"><%if (request.getParameter("inputText")==null){%>
+  <textarea rows="15" cols="50" name="inputText"><%if (request.getParameter("inputText")==null){%>
+La grippe se caractérise par une fièvre dûe à un virus.
+La grippe fait partie des infections_virales_saisonnières.
+Le cancer est de la famille des maladies_multifactorielles.
+Le sida est une maladie_infectieuse dûe à un virus constitué d'une enveloppe_proteique et d'un matériel_génétique. 
 Le rastafarisme est une sorte de philosophie.
 Le lapin est un animal.
-La fièvre est causée par faible_immunité.
+La fièvre est causée par agent_étranger.
 La fille a des boucles_d'oreilles.
 Le lapin a des oreilles.
+La fille est une bonne_cuisinière.
 <% } 
    else
    		{
@@ -24,14 +30,19 @@ Le lapin a des oreilles.
    		}
 %></textarea>
   <br><br><br>
+  <div style="margin: 0 auto; width: 50%">
   <input type="submit" value="Extraire relations sémantiques">
+  </div>
   <br><br><br>
   
 <%
 		if (request.getParameter("inputText")!=null)
 		{
+			if (Relation.types_de_relations.isEmpty()){
+				
+				Principale.fetchPatrons (session.getServletContext().getRealPath("/WEB-INF/Patterns.txt"));
 			
-			Principale.fetchPatrons (session.getServletContext().getRealPath("/WEB-INF/Patterns.txt"));
+			}
 			Analyseur analyseurDeTest=new Analyseur();
 			analyseurDeTest.setText(request.getParameter("inputText"));
 			analyseurDeTest.analyser();
@@ -44,5 +55,6 @@ Le lapin a des oreilles.
 		}
 %>  
 </form> 
+</div>
 </body>
 </html>

@@ -3,12 +3,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Relation {
-	static ArrayList<String> types_de_relations = new ArrayList<String>();
-	static HashMap<String, ArrayList<String>> typePatrons = new HashMap<String, ArrayList<String>>(); 
+	public static ArrayList<String> types_de_relations = new ArrayList<String>();
+	public static HashMap<String, ArrayList<String>> typePatrons = new HashMap<String, ArrayList<String>>();
+	public static HashMap<String, Integer> patronNbrTerms = new HashMap<String, Integer>(); 
 	private String type;//Partitative,méronymie...
 	private String term1;//Premier terme lié par la relation.
 	private String term2;//Deuxième terme lié par la relation.
-	
+	 
+	public static ArrayList<String> getTypes_de_relations() {
+		return types_de_relations;
+	}
 
 	
 	
