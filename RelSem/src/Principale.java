@@ -19,19 +19,23 @@ public class Principale {
 		}
 	}
 	
-	static void fetchPatrons (String filePath) throws IOException{
+	public static void fetchPatrons (String filePath) throws IOException{
 
 		BufferedReader buffer = Files.newBufferedReader(Paths.get(filePath), Charset.forName("ISO-8859-1"));
 		String tmp;
 		String type = null;
 		String patron;
-		Pattern ExpRegPatron = Pattern.compile("\\s([A-Za-z\\sé]+)\\s");
-		Pattern ExpRegType = Pattern.compile("([A-Za-zséàè]+) [:]");
+		int nbrTerms = 0;
+		Pattern ExpRegPatron = Pattern.compile("\\s([A-Za-z\\sé'û$à]+)\\s[$]");
+		Pattern ExpRegType = Pattern.compile("([A-Za-z/éàè]+) [:]");
+		Pattern ExpRegNbrTerms = Pattern.compile("\\$[A-Za-z]");
 		Matcher matcherPatron ;
 		Matcher matcherType ;
+		Matcher matcherNbrTerms ;
 		while ((tmp=buffer.readLine()) != null) {
 			matcherPatron = ExpRegPatron.matcher(tmp);
 			matcherType = ExpRegType.matcher(tmp);
+			matcherNbrTerms = ExpRegNbrTerms.matcher(tmp);
 			if (matcherType.find()){
 				type=matcherType.group(1);
 				System.out.println("Type de relation ajouté : "+type);
@@ -41,12 +45,18 @@ public class Principale {
 				}
 			}
 			if (matcherPatron.find()){
+				nbrTerms = 0;
 				patron=matcherPatron.group(1);
+				while (matcherNbrTerms.find()) {
+					nbrTerms++;
+				}
 				if (!Relation.types_de_relations.contains(type)) {
 					System.err.println("Type de relation inconnu pour le patron : "+patron);
 				}
 				else if (!Relation.typePatrons.get(type).contains(patron)) {
+					patron = patron.replaceAll("\\s\\$[A-Za-z]+\\s", "\\$");
 					Relation.typePatrons.get(type).add(patron);
+					Relation.patronNbrTerms.put(patron,new Integer (nbrTerms));
 				}
 				else {
 					System.out.println("Patron déjà définit ---> " +patron);

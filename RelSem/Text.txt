@@ -1,5 +1,10 @@
-Le rastafarisme est une sorte de philosophie
-Le lapin est un animal
-La fièvre est causée par faible_immunité
-La fille a des boucles_d'oreilles
-Le lapin a des oreilles
+La grippe se caractérise par une fièvre dûe à un virus.
+La grippe fait partie des infections_virales_saisonnières.
+Le cancer est de la famille des maladies_multifactorielles.
+Le sida est une maladie_infectieuse dûe à un virus constitué d'une enveloppe_proteique et d'un matériel_génétique. 
+Le rastafarisme est une sorte de philosophie.
+Le lapin est un animal.
+La fièvre est causée par agent_étranger.
+La fille a des boucles_d'oreilles.
+Le lapin a des oreilles.
+La fille est une bonne_cuisinière.

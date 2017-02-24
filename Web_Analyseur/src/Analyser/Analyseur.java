@@ -98,12 +98,13 @@ public class Analyseur {
 	
 	//Prétraitements
 	public void pretraitement(){
+		this.parser();
 		this.lemmatisation();
 		this.mots_composes();
 	}
 	
 	//Nettoyage du contenu téléchargé (HTML ou autre).
-	public void Parser(){
+	public void parser(){
 		
 	}
 	

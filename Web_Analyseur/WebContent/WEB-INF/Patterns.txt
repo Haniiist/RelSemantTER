@@ -1,4 +1,4 @@
-Hiérarchie : 
+Hyperonymie : 
 $x est $y 
 $x est un $y 
 $x est aussi un $y 

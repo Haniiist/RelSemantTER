@@ -29,18 +29,39 @@ public class Analyseur {
 		this.pretraitement();
 		for (String type : Relation.types_de_relations) {
 			for (String patron : Relation.typePatrons.get(type)) {
-				Pattern ExpReg= Pattern.compile("\\s([A-Za-z_éàè']+)\\s"+patron.replace(" ", "\\s")+"\\s([A-Za-z_éàè']+)");
+				String strExpReg = "";
+				for (int i = 0; i < patron.split("\\$").length; i++) {
+					strExpReg+="([A-Za-z_éàè']+)\\s"
+							+patron.split("\\$")[i].replace(" ", "\\s")+"\\s";
+				}
+				strExpReg+="([A-Za-z_éàè']+)";
+				Pattern ExpReg= Pattern.compile(strExpReg);
 				Matcher matcher = ExpReg.matcher(this.text);
 				while (matcher.find()){
-					if (!isAmbigu(patron) || type.equals(this.desambiguation(type,patron,matcher.group(1), matcher.group(2)))) {
-						System.out.println("Un patron de "+type+" est détecté :"+patron);
-						Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(2)));
+					for (int i = 2; i <= Relation.patronNbrTerms.get(patron); i++) {
+						if (unique(matcher.group(1),patron,matcher.group(i))) {
+							if (!isAmbigu(patron) || type.equals(this.desambiguation(type,patron,matcher.group(1), matcher.group(i)))) {
+								System.out.println("Un patron de "+type+" est détecté :"+patron);
+								Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i)));
+							}
+						}
 					}
+					
 				}
 			}
 		}
 	}
 	
+	private boolean unique(String term1, String patron, String term2) {
+		for (ArrayList<String> Set : Relation.typePatrons.values()) {
+			for (String pattern : Set) {
+				if (pattern.startsWith(patron+" "+term2) || pattern.startsWith(term1+" "+patron)){
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 	private String desambiguation(String inputType, String patron, String term1, String term2) {
 		/* 
 		 * C'est ici que seront les contraintes sémantiques.
@@ -51,7 +72,7 @@ public class Analyseur {
 		String type = inputType;
 		if (patron.equals("a des")) {
 			if (term1.equals("lapin")) {
-				type = "Méronymie";
+				type = "Holonymie";
 			}
 			
 			if (term1.equals("fille")) {
@@ -76,12 +97,13 @@ public class Analyseur {
 	
 	//Prétraitements
 	public void pretraitement(){
+		this.parser();
 		this.lemmatisation();
 		this.mots_composes();
 	}
 	
 	//Nettoyage du contenu téléchargé (HTML ou autre).
-	public void Parser(){
+	public void parser(){
 		
 	}
 	

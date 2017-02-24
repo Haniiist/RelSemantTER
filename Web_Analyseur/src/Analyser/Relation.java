@@ -9,6 +9,7 @@ public class Relation {
 	private String type;//Partitative,méronymie...
 	private String term1;//Premier terme lié par la relation.
 	private String term2;//Deuxième terme lié par la relation.
+	//Potentiellement : Ajouter contexte ou se trouve la relations
 	 
 	public static ArrayList<String> getTypes_de_relations() {
 		return types_de_relations;
