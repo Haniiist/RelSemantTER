@@ -34,10 +34,10 @@ public class Analyseur {
 			for (String patron : Relation.typePatrons.get(type)) {
 				String strExpReg = "";
 				for (int i = 0; i < patron.split("\\$").length; i++) {
-					strExpReg+="([A-Za-z_àéè']+)\\s"
+					strExpReg+="([A-Za-z_ûâàéè']+)\\s"
 							+patron.split("\\$")[i].replace(" ", "\\s")+"\\s";
 				}
-				strExpReg+="([A-Za-z_àéè']+)";
+				strExpReg+="([A-Za-z_ûâàéè']+)";
 				//Regex pour l'extraction des termes
 				Pattern ExpReg= Pattern.compile(strExpReg);
 				Matcher matcher = ExpReg.matcher(this.text);
