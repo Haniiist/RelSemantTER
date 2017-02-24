@@ -8,7 +8,8 @@ public class Relation {
 	private String type;//Partitative,méronymie...
 	private String term1;//Premier terme lié par la relation.
 	private String term2;//Deuxième terme lié par la relation.
-	//Potentiellement : Ajouter contexte ou se trouve la relations
+	private String contexte;//Contexte (Ligne/texte) dans lequel la relation a été trouvée.
+	//Potentiellement : Ajouter contexte ou se trouve la relation.
 	 
 	public static ArrayList<String> getTypes_de_relations() {
 		return types_de_relations;
@@ -16,10 +17,11 @@ public class Relation {
 
 	
 	
-	public Relation(String type, String term1, String term2) {
+	public Relation(String type, String term1, String term2, String contexte) {
 		this.type = type;
 		this.term1 = term1;
 		this.term2 = term2;
+		this.contexte = contexte;
 		if (!types_de_relations.contains(type)) {
 			types_de_relations.add(type);
 		}
@@ -36,6 +38,9 @@ public class Relation {
 	public String getType() {
 		return type;
 	}
+	public String getContexte() {
+		return contexte;
+	}
 	
 	//Setters
 	public void setTerm1(String term1) {
@@ -46,5 +51,15 @@ public class Relation {
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	public boolean equals(Relation relation){
+		
+		if (this.term1.equals(relation.term1) && this.term2.equals(relation.term2) 
+			&& this.type.equals(relation.type)){
+			return true ; 
+		}
+		
+		else return false;
+		
 	}
 }

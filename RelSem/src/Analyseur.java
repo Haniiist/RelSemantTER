@@ -35,6 +35,7 @@ public class Analyseur {
 							+patron.split("\\$")[i].replace(" ", "\\s")+"\\s";
 				}
 				strExpReg+="([A-Za-z_éàè']+)";
+				//Regex pour l'extraction des termes
 				Pattern ExpReg= Pattern.compile(strExpReg);
 				Matcher matcher = ExpReg.matcher(this.text);
 				while (matcher.find()){
@@ -42,7 +43,7 @@ public class Analyseur {
 						if (unique(matcher.group(1),patron,matcher.group(i))) {
 							if (!isAmbigu(patron) || type.equals(this.desambiguation(type,patron,matcher.group(1), matcher.group(i)))) {
 								System.out.println("Un patron de "+type+" est détecté :"+patron);
-								Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i)));
+								Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i),matcher.group()));
 							}
 						}
 					}
@@ -125,6 +126,26 @@ public class Analyseur {
 	//Setters
 	public void setText(String text) {
 		this.text = text;
+	}
+	
+	//Vérifie si une relation a déjà été trouvée
+	public boolean foundRelation(Relation relation){
+		
+		for (Relation relation_trouvee: Relations_trouvees) {
+			if (relation_trouvee.equals(relation)){
+					return true ; 
+				}
+		}
+		return false;
+		
+	}
+	//Affiche la liste des relations trouvées
+	public void displayResults() throws IOException{
+		System.out.println("Relations extraites :<br><br>");
+		for (Relation relation : this.getRelations_trouvees()) {
+			System.out.println("-"+relation.getType()+"("
+										+relation.getTerm1()+","+relation.getTerm2()+")");////Contexte : "+relation.getContexte()+"<br><br>");
+			}
 	}
 }
 	

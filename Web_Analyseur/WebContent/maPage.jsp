@@ -46,11 +46,7 @@ La fille est une bonne_cuisinière.
 			Analyseur analyseurDeTest=new Analyseur();
 			analyseurDeTest.setText(request.getParameter("inputText"));
 			analyseurDeTest.analyser();
-			out.println("Relations extraites :<br><br>");
-			for (Relation relation : analyseurDeTest.getRelations_trouvees()) {
-				out.println(relation.getType()+"("
-											+relation.getTerm1()+","+relation.getTerm2()+")<br>");
-				}
+			analyseurDeTest.displayResults(out);
 			
 		}
 %>  

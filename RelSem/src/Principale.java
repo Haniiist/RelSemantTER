@@ -13,10 +13,7 @@ public class Principale {
 		fetchPatrons ("Patterns.txt");
 		Analyseur analyseurDeTest=new Analyseur("Text.txt");
 		analyseurDeTest.analyser();
-		for (Relation relation : analyseurDeTest.getRelations_trouvees()) {
-			System.out.println("Relation : "+relation.getType()+"("
-											+relation.getTerm1()+","+relation.getTerm2()+")");
-		}
+		analyseurDeTest.displayResults();
 	}
 	
 	public static void fetchPatrons (String filePath) throws IOException{
