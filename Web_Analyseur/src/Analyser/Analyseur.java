@@ -34,10 +34,10 @@ public class Analyseur {
 			for (String patron : Relation.typePatrons.get(type)) {
 				String strExpReg = "";
 				for (int i = 0; i < patron.split("\\$").length; i++) {
-					strExpReg+="([A-Za-z_éàè']+)\\s"
+					strExpReg+="([A-Za-z_Ã Ã©Ã¨']+)\\s"
 							+patron.split("\\$")[i].replace(" ", "\\s")+"\\s";
 				}
-				strExpReg+="([A-Za-z_éàè']+)";
+				strExpReg+="([A-Za-z_Ã Ã©Ã¨']+)";
 				//Regex pour l'extraction des termes
 				Pattern ExpReg= Pattern.compile(strExpReg);
 				Matcher matcher = ExpReg.matcher(this.text);
@@ -45,7 +45,7 @@ public class Analyseur {
 					for (int i = 2; i <= Relation.patronNbrTerms.get(patron); i++) {
 						if (unique(matcher.group(1),patron,matcher.group(i))) {
 							if (!isAmbigu(patron) || type.equals(this.desambiguation(type,patron,matcher.group(1), matcher.group(i)))) {
-								System.out.println("Un patron de "+type+" est détecté :"+patron);
+								System.out.println("Un patron de "+type+" est dÃ©tectÃ© :"+patron);
 								Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i),matcher.group()));
 							}
 						}
@@ -68,9 +68,9 @@ public class Analyseur {
 	}
 	private String desambiguation(String inputType, String patron, String term1, String term2) {
 		/* 
-		 * C'est ici que seront les contraintes sémantiques.
+		 * C'est ici que seront les contraintes sÃ©mantiques.
 		 * Doit retourner le type de relation.
-		 * Utilise l'API jeuxdemots pour vérifier les contraintes sur les termes. 
+		 * Utilise l'API jeuxdemots pour vÃ©rifier les contraintes sur les termes. 
 		 * 
 		 * */
 		String type = inputType;
@@ -90,7 +90,7 @@ public class Analyseur {
 	}
 	
 	private boolean isAmbigu(String patron) {
-		//Liste de patrons qui créent une ambiguité / prêtent à confusion.
+		//Liste de patrons qui crÃ©ent une ambiguitÃ© / prÃªtent Ã  confusion.
 		if (Arrays.asList(new String[] {"a des"}).contains(patron)) {
 			return true;
 		}
@@ -99,14 +99,14 @@ public class Analyseur {
 		}
 	}
 	
-	//Prétraitements
+	//Prï¿½traitements
 	public void pretraitement(){
 		this.parser();
 		this.lemmatisation();
 		this.mots_composes();
 	}
 	
-	//Nettoyage du contenu téléchargé (HTML ou autre).
+	//Nettoyage du contenu tÃ©lÃ©chargÃ© (HTML ou autre).
 	public void parser(){
 		
 	}
@@ -116,7 +116,7 @@ public class Analyseur {
 		
 	}
 	
-	//Mise des verbes conjugués à l'infinitif.
+	//Mise des verbes conjuguÃ©s Ã  l'infinitif.
 	public void lemmatisation(){
 		
 	}
@@ -131,7 +131,7 @@ public class Analyseur {
 		this.text = text;
 	}
 	
-	//Vérifie si une relation a déjà été trouvée
+	//Vï¿½rifie si une relation a dÃ©jÃ  Ã©tÃ© trouvÃ©e
 	public boolean foundRelation(Relation relation){
 		
 		for (Relation relation_trouvee: Relations_trouvees) {
@@ -142,12 +142,12 @@ public class Analyseur {
 		return false;
 		
 	}
-	//Affiche la liste des relations trouvées
+	//Affiche la liste des relations trouvÃ©es
 	public void displayResults(JspWriter out) throws IOException{
 		out.println("Relations extraites :<br><br>");
 		for (Relation relation : this.getRelations_trouvees()) {
 			out.println("-"+relation.getType()+"("
-										+relation.getTerm1()+","+relation.getTerm2()+")");////Contexte : "+relation.getContexte()+"<br><br>");
+										+relation.getTerm1()+","+relation.getTerm2()+")<br>");////Contexte : "+relation.getContexte()+"<br><br>");
 			}
 	}
 }

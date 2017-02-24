@@ -27,8 +27,8 @@ public class Principale {
 		String type = null;
 		String patron;
 		int nbrTerms = 0;
-		Pattern ExpRegPatron = Pattern.compile("\\s([A-Za-z\\sé'û$à]+)\\s[$]");
-		Pattern ExpRegType = Pattern.compile("([A-Za-z/éàè]+) [:]");
+		Pattern ExpRegPatron = Pattern.compile("\\s([A-Za-z\\sÃ¨'Ã $Ã©]+)\\s[$]");
+		Pattern ExpRegType = Pattern.compile("([A-Za-z/Ã Ã©Ã¨Ã»]+) [:]");
 		Pattern ExpRegNbrTerms = Pattern.compile("\\$[A-Za-z]");
 		Matcher matcherPatron ;
 		Matcher matcherType ;
@@ -39,7 +39,7 @@ public class Principale {
 			matcherNbrTerms = ExpRegNbrTerms.matcher(tmp);
 			if (matcherType.find()){
 				type=matcherType.group(1);
-				System.out.println("Type de relation ajouté : "+type);
+				System.out.println("Type de relation ajoutÃ© : "+type);
 				if (!Relation.types_de_relations.contains(type)) {
 					Relation.types_de_relations.add(type);
 					Relation.typePatrons.put(type, new ArrayList<String>());
@@ -60,15 +60,15 @@ public class Principale {
 					Relation.patronNbrTerms.put(patron,new Integer (nbrTerms));
 				}
 				else {
-					System.out.println("Patron déjà définit ---> " +patron);
+					System.out.println("Patron dÃ©jÃ  dÃ©finit ---> " +patron);
 				}
 				
 			}
 		
 		}
 	
-	System.out.println("Types de relations définis: "+Relation.types_de_relations);
-	System.out.println("Patrons définis: "+Relation.typePatrons.values());
+	System.out.println("Types de relations dÃ©finis: "+Relation.types_de_relations);
+	System.out.println("Patrons dÃ©finis: "+Relation.typePatrons.values());
 	
 	}
 	

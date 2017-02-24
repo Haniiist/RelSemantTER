@@ -31,7 +31,7 @@ La fille est une bonne_cuisinière.
 %></textarea>
   <br><br><br>
   <div style="margin: 0 auto; width: 50%">
-  <input type="submit" value="Extraire relations sémantiques">
+  <input type="submit" value="Extraire relations semantiques">
   </div>
   <br><br><br>
   

@@ -6,10 +6,10 @@ public class Relation {
 	public static ArrayList<String> types_de_relations = new ArrayList<String>();
 	public static HashMap<String, ArrayList<String>> typePatrons = new HashMap<String, ArrayList<String>>();
 	public static HashMap<String, Integer> patronNbrTerms = new HashMap<String, Integer>(); 
-	private String type;//Partitative,méronymie...
-	private String term1;//Premier terme lié par la relation.
-	private String term2;//Deuxième terme lié par la relation.
-	private String contexte;//Contexte (Ligne/texte) dans lequel la relation a été trouvée.
+	private String type;//Partitative,mÃ©ronymie...
+	private String term1;//Premier terme liÃ© par la relation.
+	private String term2;//DeuxiÃ¨me terme liÃ© par la relation.
+	private String contexte;//Contexte (Ligne/texte) dans lequel la relation a Ã©tÃ© trouvÃ©e.
 	//Potentiellement : Ajouter contexte ou se trouve la relation.
 	 
 	public static ArrayList<String> getTypes_de_relations() {
