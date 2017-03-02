@@ -33,7 +33,7 @@ public class Parser {
 		fis.close();
 		String str = new String(data, "UTF-8");
 		
-		Chargement c = new Chargement();
+		Parser c = new Parser();
 		
 		Pattern pattern = Pattern.compile("\\{\\{Lang\\|\\w\\w\\|((.)+?)\\}\\}");
         	Matcher matcher = pattern.matcher(str);
