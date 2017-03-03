@@ -27,8 +27,9 @@ public class Principale {
 		String type = null;
 		String patron;
 		int nbrTerms = 0;
-		Pattern ExpRegPatron = Pattern.compile("\\s([A-Za-z\\s'$ûâàéè]+)\\s[$]");
-		Pattern ExpRegType = Pattern.compile("([A-Za-z/ûâàéè]+) [:]");
+		String carAccentues="ûâàéèêîô";
+		Pattern ExpRegPatron = Pattern.compile("\\s([A-Za-z\\s'$"+carAccentues+"]+)\\s[$]");
+		Pattern ExpRegType = Pattern.compile("([A-Za-z/"+carAccentues+"]+) [:]");
 		Pattern ExpRegNbrTerms = Pattern.compile("\\$[A-Za-z]");
 		Matcher matcherPatron ;
 		Matcher matcherType ;
