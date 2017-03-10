@@ -16,7 +16,7 @@ public class Lemmatisation {
 	
 
 	public static void main(String[] args) throws IOException{
-		String filePath = "test.txt";
+		String filePath = "dico.txt";
 	    map = new HashMap<String, ArrayList<String>>();
 	    String line;
 	    BufferedReader reader = new BufferedReader(new FileReader(filePath));
