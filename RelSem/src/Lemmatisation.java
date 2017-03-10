@@ -24,7 +24,7 @@ public class Test {
 	            String key = parts[0];
 	            String value = parts[1];
 	            
-	            String deux = parts[1]+" "+parts[2];
+	            String deux = parts[1]+"	"+parts[2];
 	            
 	            if (map.keySet().contains(parts[0])) {
 	            	map.get(parts[0]).add(deux);
@@ -47,7 +47,19 @@ public class Test {
 	// pour spliter sur plusieurs caractères split(":|+")   "Nom:Mas+SG"  ==>   [0]="Nom" [1]="Mas" [2]="SG"
 	
 
-	public static void main(String[] args) throws IOException{
+	public boolean isPluriel(String mot) throws Exception{
+		if (!map.keySet().contains(mot)) throw new Exception ("Le mot n'existe pas");
+		else {
+			for (String str : map.get(mot)){
+				String[] tab = str.split("	");
+				if (tab[1].contains("PL")) return true;
+			}
+		}
+        return false;
+	}
+	
+	
+	public static void main(String[] args) throws Exception{
 	    
 	    Test lm = new Test();
 	    
@@ -58,7 +70,7 @@ public class Test {
 
     	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     	String s = br.readLine();
-
+    	/*
     	    String[] words = s.split(" ");
 
     	    
@@ -78,7 +90,9 @@ public class Test {
 
 
 	    }
-    }
+    }*/
+	   // reader.close();
+    	System.out.println(lm.isPluriel(s));
 	}
 
 }
