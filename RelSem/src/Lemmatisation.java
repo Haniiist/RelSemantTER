@@ -1,11 +1,11 @@
-package test;
+
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Test {
+public class Lemmatisation {
 	
 	static HashMap<String, ArrayList<String>> map;
 	
@@ -61,7 +61,7 @@ public class Test {
 	
 	public static void main(String[] args) throws Exception{
 	    
-	    Test lm = new Test();
+	    Lemmatisation lm = new Lemmatisation();
 	    
 	    
 	    
