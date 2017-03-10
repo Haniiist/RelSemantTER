@@ -1,21 +1,16 @@
-package Lemmatisation;
+package test;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Lemmatisation {
+public class Test {
 	
 	static HashMap<String, ArrayList<String>> map;
 	
-	//isPluriel isMasculin isFeminin isNom isVerb isAdj isAmbigu (plus d'une correspondance)
-	//getLemme("bois") ==> boire
-	//getPos("bois") ==> verb ou nom ou adj pro det 
-	//getLemme("tapis","Nom") ==> tapis         getLemme("tapis","Ver") ==> tapir
 	
-
-	public static void main(String[] args) throws IOException{
+	public Test () throws IOException {
 		String filePath = "dico.txt";
 	    map = new HashMap<String, ArrayList<String>>();
 	    String line;
@@ -43,9 +38,20 @@ public class Lemmatisation {
 	            System.out.println(line);
 	        }
 	    }
+	}
+	//isPluriel isMasculin isFeminin isNom isVerb isAdj isAmbigu (plus d'une correspondance)
+	//getLemme("bois") ==> boire
+	//getPos("bois") ==> verb ou nom ou adj pro det 
+	//getLemme("tapis","Nom") ==> tapis         getLemme("tapis","Ver") ==> tapir
+	// penser à déclencher des exceptions dans les cas ambigus 
+	// pour spliter sur plusieurs caractères split(":|+")   "Nom:Mas+SG"  ==>   [0]="Nom" [1]="Mas" [2]="SG"
+	
+
+	public static void main(String[] args) throws IOException{
+	    
+	    Test lm = new Test();
 	    
 	    
-	    ArrayList<String> myDict = new ArrayList<String>();
 	    
     	System.out.print("Veuillez saisir  : \n");    
 
@@ -61,19 +67,18 @@ public class Lemmatisation {
 	    	
     	    for(int i=0;i<words.length;i++){
 
-    		    for (String key : map.keySet()){
+    		    for (String key : lm.map.keySet()){
     	    
     	    
 	        if(key.equals(words[i]))
 	        {
-	        	for (String str : map.get(key))
+	        	for (String str : lm.map.get(key))
 	        	System.out.println(words[i]+" "+str+" ");
 	        }
 
 
 	    }
     }
-	    reader.close();
 	}
 
 }
