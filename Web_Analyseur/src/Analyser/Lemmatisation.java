@@ -1,21 +1,34 @@
-package test;
+package Analyser;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+
 public class Lemmatisation {
 	
+	String oldText;
+	String newText;
 	static HashMap<String, ArrayList<String>> map;
 	
+	public Lemmatisation () {
+		oldText=new String();
+		newText=new String();
+	}
 	
-	public Lemmatisation () throws IOException {
-		String filePath = "dico.txt";
+	public Lemmatisation (MotsComposes mc) {
+		oldText=mc.newText;
+		newText=lemmatizeText();
+	}
+	
+	public static void createDico (String filePath) throws IOException {
 	    map = new HashMap<String, ArrayList<String>>();
 	    String line;
-	    BufferedReader reader = new BufferedReader(new FileReader(filePath));
-	    
+	    BufferedReader reader = Files.newBufferedReader(Paths.get(filePath), Charset.forName("ISO-8859-1"));
 	    while ((line = reader.readLine()) != null)
 	    {
 	        String[] parts = line.split("	");
@@ -39,17 +52,44 @@ public class Lemmatisation {
 	        }
 	    }
 	}
-	//isPluriel isMasculin isFeminin isNom isVerb isAdj isAmbigu (plus d'une correspondance)
-	//getLemme("bois") ==> boire
-	//getPos("bois") ==> verb ou nom ou adj pro det 
-	//getLemme("tapis","Nom") ==> tapis         getLemme("tapis","Ver") ==> tapir
-	// penser à déclencher des exceptions dans les cas ambigus 
-	// pour spliter sur plusieurs caractères split(":|+")   "Nom:Mas+SG"  ==>   [0]="Nom" [1]="Mas" [2]="SG"
+	
+	/*public String lemmatizeVerbsOnly() {
+		
+	}*/
+	
+	public String lemmatizeText() {
+		String str = new String(oldText);
+        String[] s = str.split("\\s");
+        String res = new String();
+        for (int i=0; i<s.length;i++) {
+			if (howManyLemmes(s[i])==1 && getPos(s[i]).equals("Ver")) {
+				s[i]=getLemme(s[i]);
+			}
+			res=res+s[i]+" ";
+		}
+        return res;
+	}
+	
+	public int howManyLemmes (String mot) {
+		int count=0;
+		if (map.keySet().contains(mot))
+			for (String key : map.keySet()){
+			  if(key.equals(mot))
+				  for (String str : map.get(mot)){
+						count++;
+					}
+			  }
+		return count;
+	}
+	
 	
 
+	public String  getLemme (String mot) {
+		return map.get(mot).get(0);
+	}
 	
-	public String  getLemme(String mot) throws Exception{
-		if (!map.keySet().contains(mot)) throw new Exception ("Le mot n'existe pas");
+	public void  getLemmes(String mot) {
+		if (!map.keySet().contains(mot)) System.out.println("Le mot n'existe pas");
 		else {
 			  for (String key : map.keySet()){
 				  if(key.equals(mot))
@@ -60,9 +100,15 @@ public class Lemmatisation {
 						}
 				  }
 		}
-		return null;
 	}
 	
+	
+	//isPluriel isMasculin isFeminin isNom isVerb isAdj isAmbigu (plus d'une correspondance)
+		//getLemme("bois") ==> boire
+		//getPos("bois") ==> verb ou nom ou adj pro det 
+		//getLemme("tapis","Nom") ==> tapis         getLemme("tapis","Ver") ==> tapir
+		// penser à déclencher des exceptions dans les cas ambigus 
+		// pour spliter sur plusieurs caractères split(":|+")   "Nom:Mas+SG"  ==>   [0]="Nom" [1]="Mas" [2]="SG"
 	
 	public String  detecter(String mot,String s) throws Exception{
 		if (!map.keySet().contains(mot)) throw new Exception ("Le mot n'existe pas");
@@ -78,20 +124,12 @@ public class Lemmatisation {
 		return null;
 	}
 	
-	
-	
-	public String getPos(String mot) throws Exception{
-		if (!map.keySet().contains(mot)) throw new Exception ("Le mot n'existe pas");
+	public String getPos(String mot) {
+		if (!map.keySet().contains(mot)) System.out.println("Le mot n'existe pas");
 		else {
 			for (String str : map.get(mot)){
 				String[] tab = str.split("	");
-				if (tab[1].contains("Nom")) return "C'est un nom";
-				else if (tab[1].contains("Ver")) return "C'est un Verbe";
-				else if (tab[1].contains("Adj")) return "C'est un Adjectif";
-				else if (tab[1].contains("Det")) return "C'est un Determinant";
-				else if (tab[1].contains("Pro")) return "C'est un Pro";
-				
-				
+				return tab[1].substring(0, 3);
 			}
 		}
         return null;
@@ -121,7 +159,7 @@ public class Lemmatisation {
 	
 	
 	public boolean isVerb(String mot) throws Exception{
-		if (!map.keySet().contains(mot)) throw new Exception ("Le mot n'existe pas");
+		if (!map.keySet().contains(mot)) System.out.println("Le mot n'existe pas");
 		else {
 			for (String str : map.get(mot)){
 				String[] tab = str.split("	");
@@ -166,7 +204,7 @@ public class Lemmatisation {
         return false;
 	}
 	
-	public static void main(String[] args) throws Exception{
+	/*public static void main(String[] args) throws Exception{
 	    
 	    Lemmatisation lm = new Lemmatisation();
 	    
@@ -186,7 +224,7 @@ public class Lemmatisation {
     	System.out.println(lm.isAdj(s)); 
     	lm.getLemme(s); 
     	System.out.println(lm.getPos(s));
-    	System.out.println(lm.detecter(s,"Nom"));
-	}
+    	System.out.println(lm.detecter(s,"Adj"));
+	}*/
 
 }
