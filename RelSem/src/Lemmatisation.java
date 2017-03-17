@@ -1,4 +1,4 @@
-package Lemmatisation;
+package test;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -62,6 +62,22 @@ public class Lemmatisation {
 		}
 		return null;
 	}
+	
+	
+	public String  detecter(String mot,String s) throws Exception{
+		if (!map.keySet().contains(mot)) throw new Exception ("Le mot n'existe pas");
+		else {
+			  for (String key : map.keySet()){
+				  if(key.equals(mot))
+					  for (String str : map.get(mot)){
+							String[] tab = str.split("	");
+							if (tab[1].contains(s)) return tab[0];
+						}
+				  }
+		}
+		return null;
+	}
+	
 	
 	
 	public String getPos(String mot) throws Exception{
@@ -170,6 +186,7 @@ public class Lemmatisation {
     	System.out.println(lm.isAdj(s)); 
     	lm.getLemme(s); 
     	System.out.println(lm.getPos(s));
+    	System.out.println(lm.detecter(s,"Nom"));
 	}
 
 }
