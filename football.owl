@@ -1,0 +1,2981 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/msebih/ontologies/football#"
+     xml:base="http://www.semanticweb.org/msebih/ontologies/football"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:football="http://www.semanticweb.org/msebih/ontologies/football#"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/msebih/ontologies/football"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/currentLeague -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/currentLeague">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/SportsLeague"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/currentTeam -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/currentTeam">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/SportsTeam"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/nationality -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/nationality">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#contract -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#contract">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#finances -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#finances">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamFinances"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#fromContinent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#fromContinent">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Continent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#inContractWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#inContractWith">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/SportsTeam"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#inCountry -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#inCountry">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/SportsLeague"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#inLeague -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#inLeague">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/SportsTeam"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/SportsLeague"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerStatistics -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerStatistics">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#position -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#position">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#teamStatistics -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#teamStatistics">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamStatistics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#age">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#birthDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#birthDate">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#buyoutClause -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#buyoutClause">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#daysInjured -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#daysInjured">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#endDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#endDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#firstRelagated -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#firstRelagated">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/SportsLeague"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#height -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#height">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#name">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#numberOfTeams -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#numberOfTeams">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/SportsLeague"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerApps -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerApps">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerAssists -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerAssists">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerDribblesPerGame -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerDribblesPerGame">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerFoulsPerGame -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerFoulsPerGame">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerGoals -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerGoals">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerInterceptionsPerGame -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerInterceptionsPerGame">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerMarketValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerMarketValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerPassSuccess -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerPassSuccess">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerPassesPerGame -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerPassesPerGame">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerRedCards -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerRedCards">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerShotsPerGame -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerShotsPerGame">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerStatsYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerStatsYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerTacklesPerGame -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerTacklesPerGame">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#playerYellowCards -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#playerYellowCards">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#startDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#startDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#teamGames -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#teamGames">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#teamGoals -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#teamGoals">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#teamRanking -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#teamRanking">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#teamRedCards -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#teamRedCards">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#teamStatsYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#teamStatsYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#teamTotalWeeklySalary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#teamTotalWeeklySalary">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamFinances"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#teamTransferBudget -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#teamTransferBudget">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamFinances"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#teamWeeklySalaryCap -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#teamWeeklySalaryCap">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamFinances"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#teamWeeklySalaryGap -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#teamWeeklySalaryGap">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamFinances"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#teamYellowCards -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#teamYellowCards">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#weeklySalary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#weeklySalary">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#weight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#weight">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#yearsLeft -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msebih/ontologies/football#yearsLeft">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Athlete -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Athlete"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Continent -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Continent"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Country -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Country"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SportsLeague -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/SportsLeague"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SportsTeam -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/SportsTeam"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Aggressive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Aggressive">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerStatistics"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerRedCards"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</xsd:minInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerYellowCards"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</xsd:minInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#AssistMaker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#AssistMaker">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerStatistics"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerAssists"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Defender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Defender">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Forward"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Goalkeeper"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Midfielder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Distributor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Distributor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerStatistics"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerPassSuccess"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.85</xsd:minInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerPassesPerGame"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</xsd:minInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Forward -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Forward">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Goalkeeper"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Midfielder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#FreeAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#FreeAgent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#contract"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#yearsLeft"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</xsd:maxInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerWithEndingContract"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#GoalScorer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#GoalScorer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerStatistics"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerGoals"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Goalkeeper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Goalkeeper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Midfielder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Interceptor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Interceptor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerStatistics"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerInterceptionsPerGame"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</xsd:minInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerTacklesPerGame"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</xsd:minInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#League -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#League">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/SportsLeague"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Midfielder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Midfielder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Player -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#PlayerContract -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#PlayerWithEndingContract -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#PlayerWithEndingContract">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#contract"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#yearsLeft"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</xsd:maxExclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Position -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#PromisingPlayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#PromisingPlayer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerStatistics"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerApps"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</xsd:minInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerAssists"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</xsd:minInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerGoals"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</xsd:minInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#age"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#ProneToInjuries -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#ProneToInjuries">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerStatistics"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#daysInjured"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">90</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Shooter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Shooter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerStatistics"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerShotsPerGame"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.5</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Starter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Starter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerStatistics"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerApps"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#StrongDefender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#StrongDefender">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Defender"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#height"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">185</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Team -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Team">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/SportsTeam"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#TeamFinances -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#TeamFinances"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#TeamInNeedOfSelling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#TeamInNeedOfSelling">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Team"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#finances"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#teamTransferBudget"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#teamWeeklySalaryGap"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</xsd:maxInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#TeamStatistics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#TeamStatistics"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#TopDefender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#TopDefender">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerStatistics"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerInterceptionsPerGame"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.5</xsd:minInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#playerTacklesPerGame"/>
+                                        <owl:someValuesFrom>
+                                            <rdfs:Datatype>
+                                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                                <owl:withRestrictions rdf:parseType="Collection">
+                                                    <rdf:Description>
+                                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.5</xsd:minInclusive>
+                                                    </rdf:Description>
+                                                </owl:withRestrictions>
+                                            </rdfs:Datatype>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Defender"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Interceptor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Versatile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Versatile">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#position"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Africa -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Africa">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Continent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Americas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Americas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Continent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Argentina -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Argentina">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Asia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Asia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Continent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Brazil -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Brazil">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Europe -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Europe">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Continent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/France -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/France">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Germany -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Germany">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Italy -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Italy">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ivory_Coast -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ivory_Coast">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mali -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mali">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Morocco -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Morocco">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Oceania -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Oceania">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Continent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Portugal -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Portugal">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sweden -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sweden">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Uruguay -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Uruguay">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Adama_Traoré -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Adama_Traoré">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Shooter"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/France"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Adama_Traoré_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Adama_Traoré_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#AttackingMidfielder"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">180</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3000000.0</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">72</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Adama_Traoré_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Adama_Traoré_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">15000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Adama_Traoré_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Adama_Traoré_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.25</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.2</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">89.95</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">30.5</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.8</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Adrien_Rabiot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Adrien_Rabiot">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Distributor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Interceptor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PromisingPlayer"/>
+        <ontology:currentLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/France"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Contract_A_Rabiot_PSG"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Stats_A_Rabiot_PSG_2016"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#CentralMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#DefendingMidfielder"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">188</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Almamy_Touré -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Almamy_Touré">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Interceptor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerWithEndingContract"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PromisingPlayer"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Mali"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Almamy_Touré_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Africa"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Almamy_Touré_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#RightBack"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">19</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">183</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2000000.0</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">172</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Almamy_Touré_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Almamy_Touré_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">14600.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Almamy_Touré_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Almamy_Touré_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.7</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.3</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</playerInterceptionsPerGame>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">34.1</playerPassesPerGame>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">79.5</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.2</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Andrea_Raggi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Andrea_Raggi">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Angel_Di_Maria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Angel_Di_Maria">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#AssistMaker"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Distributor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Versatile"/>
+        <ontology:currentLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Argentina"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Contract_A_Di_Maria_PSG"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Americas"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Stats_A_Di_Maria_PSG_2016"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#AttackingMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#LeftWinger"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#RightWinger"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</age>
+        <birthDate>1988-02-14</birthDate>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</height>
+        <name>Angel Di Maria</name>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">7.5E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Anthony_Martial -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Anthony_Martial">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#GoalScorer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerWithEndingContract"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PromisingPlayer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Versatile"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/France"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Anthony_Martial_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Anthony_Martial_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#AttackingMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#LeftMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#RightMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Striker"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">181</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.5E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">76</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Anthony_Martial_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Anthony_Martial_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">87000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Anthony_Martial_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Anthony_Martial_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.1</playerDribblesPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</playerGoals>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">73.5</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">23.3</playerPassesPerGame>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.6</playerShotsPerGame>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#AttackingMidfielder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#AttackingMidfielder">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Midfielder"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Bernardo_Silva -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Bernardo_Silva">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Portugal"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Bernardo_Silva_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Bernardo_Silva_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#AttackingMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#LeftMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#RightMidfielder"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">173</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.5E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">64</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Bernardo_Silva_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Bernardo_Silva_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Bernardo_Silva_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Bernardo_Silva_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">28</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.25</playerDribblesPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.86</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">83.4</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">32.7</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.15</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.7</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Boschilia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Boschilia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#CenterBack -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#CenterBack">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Defender"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#CentralMidfielder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#CentralMidfielder">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Midfielder"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Contract_A_Di_Maria_PSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Contract_A_Di_Maria_PSG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <inContractWith rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <buyoutClause rdf:datatype="http://www.w3.org/2001/XMLSchema#float">6.0E7</buyoutClause>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">250000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Contract_A_Rabiot_PSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Contract_A_Rabiot_PSG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">80000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Contract_E_Cavani_PSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Contract_E_Cavani_PSG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">180000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Contract_K_Trapp_PSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Contract_K_Trapp_PSG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">70000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.5</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Contract_L_Moura_PSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Contract_L_Moura_PSG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Contract_M_Verratti_PSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Contract_M_Verratti_PSG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Contract_N_Douchez_PSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Contract_N_Douchez_PSG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <inContractWith rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">35000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Contract_S_Aurier_PSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Contract_S_Aurier_PSG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Contract_T_Silva_PSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Contract_T_Silva_PSG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <inContractWith rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">200000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Contract_Z_Ibrahimovic_PSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Contract_Z_Ibrahimovic_PSG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <inContractWith rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">400000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Danijel_Subasic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Danijel_Subasic">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#DefendingMidfielder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#DefendingMidfielder">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Midfielder"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Edinson_Cavani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Edinson_Cavani">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#GoalScorer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Shooter"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <ontology:currentLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Uruguay"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Contract_E_Cavani_PSG"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Americas"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Stats_E_Cavani_PSG_2016"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#RightWinger"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Striker"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">184</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.5E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Elderson_Echiéjilé -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Elderson_Echiéjilé">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Fabinho -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Fabinho">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Aggressive"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#StrongDefender"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Versatile"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Brazil"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Fabinho_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Americas"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Fabinho_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#DefendingMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#RightBack"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">188</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.3E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">78</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Fabinho_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Fabinho_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">79000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Fabinho_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Fabinho_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">39</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.05</playerDribblesPerGame>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.8</playerDribblesPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.3</playerInterceptionsPerGame>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">54.6</playerPassesPerGame>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">80.8</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.6</playerShotsPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Fares_Bahlouli -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Fares_Bahlouli">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Finances_PSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Finances_PSG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamFinances"/>
+        <teamTransferBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.2E7</teamTransferBudget>
+        <teamWeeklySalaryGap rdf:datatype="http://www.w3.org/2001/XMLSchema#float">200000.0</teamWeeklySalaryGap>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Fábio_Coentrão -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Fábio_Coentrão">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerWithEndingContract"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Portugal"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Fábio_Coentrão_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Fábio_Coentrão_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#LeftBack"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">28</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">179</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.9E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Fábio_Coentrão_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Fábio_Coentrão_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">145000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Fábio_Coentrão_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Fábio_Coentrão_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.45</playerDribblesPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.7</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">79.3</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">36.5</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.4</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.35</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Goalie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Goalie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Goalkeeper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Guido_Carrillo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Guido_Carrillo">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Hélder_Costa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Hélder_Costa">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Ilyes_Chaibi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Ilyes_Chaibi">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Ivan_Cavaleiro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Ivan_Cavaleiro">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Jemerson -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Jemerson">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#João_Moutinho -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#João_Moutinho">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Distributor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Portugal"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#João_Moutinho_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#João_Moutinho_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#CentralMidfielder"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">29</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">170</height>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">61</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.5E7</playerMarketValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#João_Moutinho_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#João_Moutinho_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">178000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#João_Moutinho_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#João_Moutinho_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.55</playerDribblesPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.8</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">87.1</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">56.2</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.8</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.35</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Jérémy_Toulalan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Jérémy_Toulalan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#FreeAgent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Interceptor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerWithEndingContract"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TopDefender"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Versatile"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/France"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Jérémy_Toulalan_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Jérémy_Toulalan_Statistic"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#CenterBack"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#DefendingMidfielder"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">32</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">183</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5000000.0</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Jérémy_Toulalan_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Jérémy_Toulalan_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Jérémy_Toulalan_Statistic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Jérémy_Toulalan_Statistic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.4</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.9</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.2</playerInterceptionsPerGame>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.2</playerPassesPerGame>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">81.7</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.25</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.05</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Kevin_Trapp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Kevin_Trapp">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <ontology:currentLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Germany"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Contract_K_Trapp_PSG"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Stats_K_Trapp_PSG_2016"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Goalie"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">189</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.5E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Kylian_Mbappe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Kylian_Mbappe">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Lacina_Traoré -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Lacina_Traoré">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Layvin_Kurzawa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Layvin_Kurzawa">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Distributor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Interceptor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TopDefender"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/France"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Layvin_Kurzawa_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Layvin_Kurzawa_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#LeftBack"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">23</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">182</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.5E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">74</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Layvin_Kurzawa_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Layvin_Kurzawa_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">135000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Layvin_Kurzawa_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Layvin_Kurzawa_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.6</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.93</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.8</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">86.3</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.7</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.15</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.2</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#LeftBack -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#LeftBack">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Defender"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#LeftMidfielder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#LeftMidfielder">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Midfielder"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#LeftWinger -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#LeftWinger">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Forward"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Ligue_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SportsLeague"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#League"/>
+        <inCountry rdf:resource="http://dbpedia.org/resource/France"/>
+        <firstRelagated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</firstRelagated>
+        <numberOfTeams rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</numberOfTeams>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Lucas_Moura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Lucas_Moura">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <ontology:currentLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Brazil"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Contract_L_Moura_PSG"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Americas"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Stats_L_Moura_PSG_2016"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#LeftWinger"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#RightWinger"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">172</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">72</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Marco_Verratti -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Marco_Verratti">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Distributor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#ProneToInjuries"/>
+        <ontology:currentLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Italy"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Contract_M_Verratti_PSG"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Stats_M_Verratti_PSG_2016"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#CentralMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#DefendingMidfielder"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">165</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Mario_Pasalic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Mario_Pasalic">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Monaco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Monaco">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SportsTeam"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Team"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamInNeedOfSelling"/>
+        <finances rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco_Finances"/>
+        <inLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Monaco_Finances -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Monaco_Finances">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamFinances"/>
+        <teamTransferBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0E7</teamTransferBudget>
+        <teamWeeklySalaryGap rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-10000.0</teamWeeklySalaryGap>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Nabil_Dirar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Nabil_Dirar">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#AssistMaker"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Morocco"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Nabil_Dirar_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Africa"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Nabil_Dirar_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#AttackingMidfielder"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">187</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">7000000.0</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">82</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Nabil_Dirar_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Nabil_Dirar_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">89000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Nabil_Dirar_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Nabil_Dirar_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.1</playerDribblesPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.15</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">81.9</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">23.3</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Nicolas_Douchez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Nicolas_Douchez">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#FreeAgent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerWithEndingContract"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#ProneToInjuries"/>
+        <ontology:currentLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/France"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Contract_N_Douchez_PSG"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Stats_N_Douchez_PSG_2016"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Goalie"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</age>
+        <birthDate>1980-04-22</birthDate>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">186</height>
+        <name>Nicolas Douchez</name>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1000000.0</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SportsTeam"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Team"/>
+        <finances rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Finances_PSG"/>
+        <inLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+        <teamStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Statistics_PSG_2016"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Paul_Nardi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Paul_Nardi">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Ricardo_Carvalho -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Ricardo_Carvalho">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#RightBack -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#RightBack">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Defender"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#RightMidfielder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#RightMidfielder">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Midfielder"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#RightWinger -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#RightWinger">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Forward"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Rony_Lopes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Rony_Lopes">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Serge_Aurier -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Serge_Aurier">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Aggressive"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Distributor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Interceptor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TopDefender"/>
+        <ontology:currentLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Ivory_Coast"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Contract_S_Aurier_PSG"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Africa"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Stats_S_Aurier_PSG_2016"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#RightBack"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">176</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.8E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Statistics_Monaco_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Statistics_Monaco_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamStatistics"/>
+        <teamGames rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</teamGames>
+        <teamGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">57</teamGoals>
+        <teamRanking rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</teamRanking>
+        <teamRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</teamRedCards>
+        <teamStatsYear>2015/2016</teamStatsYear>
+        <teamYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">77</teamYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Statistics_PSG_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Statistics_PSG_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#TeamStatistics"/>
+        <teamGames rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</teamGames>
+        <teamGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</teamGoals>
+        <teamRanking rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</teamRanking>
+        <teamRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</teamRedCards>
+        <teamStatsYear>2015/2016</teamStatsYear>
+        <teamYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46</teamYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Stats_A_Di_Maria_PSG_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Stats_A_Di_Maria_PSG_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <daysInjured rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</daysInjured>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.9</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.2</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.7</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">80.5</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">53.2</playerPassesPerGame>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.4</playerShotsPerGame>
+        <playerStatsYear>2015/2016</playerStatsYear>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.4</playerTacklesPerGame>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Stats_A_Rabiot_PSG_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Stats_A_Rabiot_PSG_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.7</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">90.8</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">60.0</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.6</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.5</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Stats_E_Cavani_PSG_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Stats_E_Cavani_PSG_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.6</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.9</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.4</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">85.4</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">24.8</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.7</playerShotsPerGame>
+        <playerStatsYear>2015/2016</playerStatsYear>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.6</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Stats_K_Trapp_PSG_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Stats_K_Trapp_PSG_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</playerApps>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Stats_L_Moura_PSG_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Stats_L_Moura_PSG_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.7</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.8</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.8</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">85.1</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">33.9</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.8</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.3</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Stats_M_Verratti_PSG_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Stats_M_Verratti_PSG_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <daysInjured rdf:datatype="http://www.w3.org/2001/XMLSchema#int">95</daysInjured>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.2</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.7</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.4</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">93.0</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">82.2</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</playerRedCards>
+        <playerStatsYear>2015/2016</playerStatsYear>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.7</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Stats_N_Douchez_PSG_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Stats_N_Douchez_PSG_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <daysInjured rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</daysInjured>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</playerApps>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">91.7</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">24.0</playerPassesPerGame>
+        <playerStatsYear>2015/2016</playerStatsYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Stats_S_Aurier_PSG_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Stats_S_Aurier_PSG_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.2</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.7</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.4</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">88.4</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">55.0</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</playerShotsPerGame>
+        <playerStatsYear>2015/2016</playerStatsYear>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.0</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Stats_T_Silva_PSG_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Stats_T_Silva_PSG_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <daysInjured rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</daysInjured>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.6</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.1</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">94.6</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">80.6</playerPassesPerGame>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</playerShotsPerGame>
+        <playerStatsYear>2015/2016</playerStatsYear>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.7</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Stats_Z_Ibrahimovic_PSG_2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Stats_Z_Ibrahimovic_PSG_2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <daysInjured rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</daysInjured>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.2</playerDribblesPerGame>
+        <playerFoulsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.9</playerFoulsPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.2</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">78.9</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">44.2</playerPassesPerGame>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</playerShotsPerGame>
+        <playerStatsYear>2015/2016</playerStatsYear>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Stephan_El_Shaarawy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Stephan_El_Shaarawy">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Striker -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Striker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Forward"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Position"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Thiago_Silva -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Thiago_Silva">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Distributor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <ontology:currentLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Brazil"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Contract_T_Silva_PSG"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Americas"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Stats_T_Silva_PSG_2016"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#CenterBack"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</age>
+        <birthDate>1984-09-22</birthDate>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">183</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3000000.0</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">79</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Thomas_Lemar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Thomas_Lemar">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PromisingPlayer"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/France"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Thomas_Lemar_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Thomas_Lemar_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#AttackingMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#CentralMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#LeftMidfielder"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#RightMidfielder"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">170</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.3E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">58</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Thomas_Lemar_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Thomas_Lemar_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">85000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Thomas_Lemar_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Thomas_Lemar_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.9</playerDribblesPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.65</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">85.7</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">28.8</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.95</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Tiemoué_Bakayoko -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Tiemoué_Bakayoko">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/France"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Tiemoué_Bakayoko_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Thomas_Lemar_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#DefendingMidfielder"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">184</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1000000.0</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">72</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Tiemoué_Bakayoko_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Tiemoué_Bakayoko_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Tiemoué_Bakayoko_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Tiemoué_Bakayoko_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.25</playerDribblesPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">6.2</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">82.7</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">37.4</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.4</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.4</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Vágner_Love -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Vágner_Love">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Wallace -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Wallace">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#StrongDefender"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Monaco"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Brazil"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Wallace_Contract"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Americas"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Wallace_Statistics"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#CenterBack"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21</age>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">192</height>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8000000.0</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">83</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Wallace_Contract -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Wallace_Contract">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerContract"/>
+        <weeklySalary rdf:datatype="http://www.w3.org/2001/XMLSchema#float">65000.0</weeklySalary>
+        <yearsLeft rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</yearsLeft>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Wallace_Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Wallace_Statistics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerStatistics"/>
+        <playerApps rdf:datatype="http://www.w3.org/2001/XMLSchema#int">29</playerApps>
+        <playerAssists rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerAssists>
+        <playerDribblesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.2</playerDribblesPerGame>
+        <playerGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</playerGoals>
+        <playerInterceptionsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.52</playerInterceptionsPerGame>
+        <playerPassSuccess rdf:datatype="http://www.w3.org/2001/XMLSchema#double">79.5</playerPassSuccess>
+        <playerPassesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">40.4</playerPassesPerGame>
+        <playerRedCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</playerRedCards>
+        <playerShotsPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.15</playerShotsPerGame>
+        <playerTacklesPerGame rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.4</playerTacklesPerGame>
+        <playerYellowCards rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</playerYellowCards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msebih/ontologies/football#Zlatan_Ibrahimovic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Zlatan_Ibrahimovic">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#AssistMaker"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#FreeAgent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#GoalScorer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Player"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#PlayerWithEndingContract"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Shooter"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Starter"/>
+        <ontology:currentLeague rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Ligue_1"/>
+        <ontology:currentTeam rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Paris_Saint-Germain"/>
+        <ontology:nationality rdf:resource="http://dbpedia.org/resource/Sweden"/>
+        <contract rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Contract_Z_Ibrahimovic_PSG"/>
+        <fromContinent rdf:resource="http://dbpedia.org/resource/Europe"/>
+        <playerStatistics rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Stats_Z_Ibrahimovic_PSG_2016"/>
+        <position rdf:resource="http://www.semanticweb.org/msebih/ontologies/football#Striker"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</age>
+        <birthDate>1981-10-03</birthDate>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">195</height>
+        <name>Zlatan Ibrahimovic</name>
+        <playerMarketValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0E7</playerMarketValue>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</weight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Defender"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Forward"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Goalkeeper"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/msebih/ontologies/football#Midfielder"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
+
