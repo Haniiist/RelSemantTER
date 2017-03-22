@@ -8,7 +8,7 @@ Tâches à faire :
    - [Désambiguation.](Désambiguation.md)
    - Prétraitements : 
 
-	- [Lemmatisation](Lemmatisation.md)/[Code.](RelSem/src/Analyseur.java)
+	- [Lemmatisation](Lemmatisation.md)/[Code.](RelSem/src/Analyseur.java)(@Houssam)
 	  
 	- [Parser] (Parser.md)/[Code.](RelSem/src/Analyseur.java)
 
