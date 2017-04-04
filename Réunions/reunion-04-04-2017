@@ -1,0 +1,32 @@
+Pour l'intégration du code on doit executer le code et envoyer les resultats au prof en fournissant les liens wiki, la configuration de l'integration du code
+
+on doit ouvre un google doc et le partager avec le prof
+
+
+
+
+disambiguation :
+pour les mots polysémique on peut faire la désambiguation en utilisant jeux de mots :
+l'arbre du moteur 
+l'arbre du machin 
+
+on cherche le sens de la relation en cherchant les mots dans l'API et la reeltion qui les relie, on peut utiliser le poids des relations.
+
+Pour l'integration du code (pipeline) : on va utiliser plusieurs configurations et vérifier lers resultats :
+exemple : lemmatisation des mots sinbguliers, plusiers variantes.
+
+Pour la lemmatisation , pour choisire la meilleure solution on test
+exemple : on lemmatise les mots pluriels et on regarde si ca nous ajoute des relations, si on'as pas de relations ajoutées alors on lemmatise les mots en singuliers.
+
+
+
+
+
+-faut chercher dans jeux de mots pour trouveer le sens le plus probable
+
+-par exemple le mot arbre dans jeux de mots ca donne un arbre avec des brances et moteur aussi
+donc ca sera 2 schema differents : ca peut donner 2 relations :
+
+		arbre "Part Of" la foret
+
+
