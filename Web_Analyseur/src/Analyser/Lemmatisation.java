@@ -9,10 +9,10 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 
-public class Lemmatisation {
+public class Lemmatisation extends TextClass{
 	
-	String oldText;
-	String newText;
+	//String oldText;
+	//String newText;
 	static HashMap<String, ArrayList<String>> map;
 	
 	public Lemmatisation () {
@@ -20,7 +20,7 @@ public class Lemmatisation {
 		newText=new String();
 	}
 	
-	public Lemmatisation (MotsComposes mc) {
+	public Lemmatisation (TextClass mc) {
 		oldText=mc.newText;
 		newText=lemmatizeText();
 	}

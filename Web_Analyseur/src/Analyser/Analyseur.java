@@ -11,12 +11,17 @@ import java.util.regex.Pattern;
 
 import javax.servlet.jsp.JspWriter;
 
+
 public class Analyseur {
-	String carAccentues="Ã»Ã¢Ã Ã©Ã¨ÃªÃ®Ã´";
+	String carAccentues="ûâàéèêîô";
 	String motFr ="[A-Za-z_"+carAccentues+"']";
 	String filePath;
 	private String text;	
 	private ArrayList<Relation> Relations_trouvees = new ArrayList<Relation>();
+	Parser p;
+	Lemmatisation lm;
+	MotsComposes mc;
+
 	
 	public Analyseur (){
 		
@@ -28,6 +33,7 @@ public class Analyseur {
 		while ((tmp=buffer.readLine()) != null) {
 			text=text+"\\n"+tmp;
 		}
+		
 	}
 	
 	public void analyser(){
@@ -48,9 +54,9 @@ public class Analyseur {
 					for (int i = 2; i <= Relation.patronNbrTerms.get(patron); i++) {
 						// Test si il n'y a pas confusion entre patrons
 						if (unique(type,matcher.group(1),patron,matcher.group(i),matcher.group())) {
-							// Test d'ambiguitÃ© et dÃ©sambiguation (par contraintes sÃ©mantiques)
+							// Test d'ambiguité et désambiguation (par contraintes sémantiques)
 							if (!isAmbigu(patron) || type.equals(this.desambiguation(type,patron,matcher.group(1), matcher.group(i)))) {
-								System.out.println("Un patron de "+type+" est dÃ©tectÃ© :"+patron);
+								System.out.println("Un patron de "+type+" est détecté :"+patron);
 								Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i),matcher.group()));
 							}
 						}
@@ -63,7 +69,7 @@ public class Analyseur {
 	
 	private boolean unique(String type, String term1, String patron, String term2, String contexte) {
 		/*
-		 * MÃ©thode Ã©vitant la confusion entre patrons.
+		 * Méthode évitant la confusion entre patrons.
 		 */
 		for (ArrayList<String> Set : Relation.typePatrons.values()) {
 			for (String pattern : Set) {
@@ -71,7 +77,7 @@ public class Analyseur {
 				if (!patron.equals(pattern) && this.foundRelation(new Relation(type,term1,term2,contexte) )){
 					return false;
 				}
-				// Cas 2 : [(Terme1+Patron) ou (Patron+Terme2)] est un patron --> Interdire la crÃ©ation d'une relation. 
+				// Cas 2 : [(Terme1+Patron) ou (Patron+Terme2)] est un patron --> Interdire la création d'une relation. 
 				if (pattern.startsWith(patron+" "+term2) || pattern.startsWith(term1+" "+patron)){
 					return false;
 				}
@@ -81,14 +87,14 @@ public class Analyseur {
 	}
 	private String desambiguation(String inputType, String patron, String term1, String term2) {
 		/* 
-		 * C'est ici que seront les contraintes sÃ©mantiques.
+		 * C'est ici que seront les contraintes sémantiques.
 		 * Doit retourner le type de relation.
-		 * Utilise l'API de jeuxdemots pour vÃ©rifier les contraintes sur les termes. 
+		 * Utilise l'API de jeuxdemots pour vérifier les contraintes sur les termes. 
 		 * 
 		 * */
 		String type = inputType;
 		if (patron.equals("a des")) {
-			// Simulation de contraintes sÃ©mantiques sur le patron "a des" (A titre d'exemple).
+			// Simulation de contraintes sémantiques sur le patron "a des" (A titre d'exemple).
 			if (term1.equals("lapin")) {
 				type = "Holonymie";
 			}
@@ -105,7 +111,7 @@ public class Analyseur {
 	
 	private boolean isAmbigu(String patron) {
 		/*
-		 * Liste de patrons qui crÃ©ent une ambiguitÃ© / prÃªtent Ã  confusion.
+		 * Liste de patrons qui créent une ambiguité / prêtent à confusion.
 		 */
 		if (Arrays.asList(new String[] {"a des"}).contains(patron)) {
 			return true;
@@ -114,15 +120,17 @@ public class Analyseur {
 			return false;
 		}
 	}
-	
+
 	
 	public void pretraitement(){
 		/*
 		 * PrÃ©traitements. 
 		 */
 		this.parser();
-		this.lemmatisation();
-		this.mots_composes();
+		this.mots_composes(p);
+		this.lemmatisation(mc);
+		//this.mots_composes(lm);
+
 	}
 	
 	
@@ -130,20 +138,33 @@ public class Analyseur {
 		/*
 		 * Nettoyage du contenu tÃ©lÃ©chargÃ© (HTML ou autre). 
 		 */
+		
+		/*
+		 * Probleme a régler : le texte commence par null/n, essayer de l'enlver du texte
+		 */
+		String texts = text.replaceAll("null", "");
+		//System.out.println(" Analyser Parser "+texts);
+		p = new Parser(texts);
+		//System.out.println(" Analyser Parser "+p.newText);
+
 	}
 	
 	
-	public void mots_composes(){
+	public void mots_composes(TextClass TIp){
 		/*
 		 * Remplacement des espaces par des underscores. 
 		 */
+		
+		mc = new MotsComposes(TIp);
 	}
 	
 	
-	public void lemmatisation(){
+	public void lemmatisation(TextClass TIp){
 		/*
 		 * Mise des verbes conjuguÃ©s Ã  l'infinitif... 	
 		 */
+		
+		lm = new Lemmatisation(TIp);
 	}
 	
 	//Getters
@@ -176,7 +197,7 @@ public class Analyseur {
 		 */
 		out.println("Relations extraites :<br><br>");
 		for (Relation relation : this.getRelations_trouvees()) {
-			out.println("-"+relation.getType()+"("
+			System.out.println("-"+relation.getType()+"("
 										+relation.getTerm1()+","+relation.getTerm2()+")<br>");////Contexte : "+relation.getContexte()+"<br><br>");
 			}
 	}

@@ -4,9 +4,8 @@ import java.io.*;
 import java.util.*;
 import java.util.regex.*;
 
-public class Parser {
-	String oldText;
-	String newText;
+public class Parser extends TextClass {
+	
 	ArrayList<String> linksWiki;
 	ArrayList<String> bold;
 	ArrayList<String> italic;
@@ -43,7 +42,7 @@ public class Parser {
 	public String cleanText(){
 		String str=new String(oldText);
 		Pattern pattern = Pattern.compile("\\{\\{Lang\\|\\w\\w\\|((.)+?)\\}\\}");
-    	Matcher matcher = pattern.matcher(str);
+		Matcher matcher = pattern.matcher(str);
     	while (matcher.find()) {
         	String group = matcher.group(0);
         	String group1 = matcher.group(1);
@@ -77,8 +76,8 @@ public class Parser {
         str=matcher.replaceAll("");
         
     
-        pattern = Pattern.compile("(<ref(.|\n)*?\\/ref>)+?|\\[\\[CatÃ©gorie:((.)+?)\\]\\]|\\[\\[Fichier:((.)+?)\\]\\]\n|\\[http((.)+?)\\]|<!--(.)?-->");
-    	matcher = pattern.matcher(str);
+        pattern = Pattern.compile("(<ref(.|\n)*?\\/ref>)+?|\\[\\[Catégorie:((.)+?)\\]\\]|\\[\\[Fichier:((.)+?)\\]\\]\n|\\[http((.)+?)\\]|<!--(.)?-->");
+        matcher = pattern.matcher(str);
         while (matcher.find()) {
             String group = matcher.group(0);
             deleted.add(group);

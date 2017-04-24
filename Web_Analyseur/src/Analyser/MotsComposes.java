@@ -12,9 +12,8 @@ import RequeterRezo.RequeterRezo;
 import RequeterRezo.Mot;
 import RequeterRezo.RequeterRezo.TupleRelationTerme;
 
-public class MotsComposes {
-	String oldText;
-	String newText;
+public class MotsComposes extends TextClass {
+	
 	ArrayList<Mot> motsTrouves;
 	
 	
@@ -24,7 +23,7 @@ public class MotsComposes {
 		motsTrouves = new ArrayList<Mot>();
 	}
 	
-	public MotsComposes(Parser p){
+	public MotsComposes(TextClass p){
 		this.oldText = new String(p.newText);	
 		motsTrouves = new ArrayList<Mot>();
 		this.newText=findMC();	
@@ -70,7 +69,7 @@ public static Mot requeterRezo(String s){
 					k++;	
 				}
 				int bool=0;
-				if (!Arrays.asList(new String[]{" ",".  ",". ",".","La","de la",".","Elle"}).contains(chaine_mots_compose)) {
+				if (!Arrays.asList(new String[]{" ",".  ",". ",".","La","de la",".","Elle","par","une","un"}).contains(chaine_mots_compose)) {
 					Mot compound_word = requeterRezo(chaine_mots_compose);
 
 					if(compound_word !=null){
