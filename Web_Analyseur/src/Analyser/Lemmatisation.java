@@ -1,4 +1,4 @@
-package Analyser;
+package Analyseur;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -20,8 +20,14 @@ public class Lemmatisation extends TextClass{
 		newText=new String();
 	}
 	
-	public Lemmatisation (TextClass mc) {
-		oldText=mc.newText;
+	public Lemmatisation (TextClass tc) {
+		oldText=tc.newText;
+		try {
+			createDico("dico.txt");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		newText=lemmatizeText();
 	}
 	

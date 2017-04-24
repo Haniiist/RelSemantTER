@@ -1,4 +1,4 @@
-package Analyser;
+package Analyseur;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -12,7 +12,8 @@ public class Principale {
 
 	public static void main(String[] args) throws IOException {
 		fetchPatrons ("Patterns.txt");
-		Analyseur analyseurDeTest=new Analyseur("Text.txt");
+		Analyseur analyseurDeTest=new Analyseur("D:\\TER\\Articles\\Articles\\F\\Facteur de risque cardio-vasculaire.txt");
+		//Analyseur analyseurDeTest=new Analyseur("Text.txt");
 		analyseurDeTest.analyser();
 		for (Relation relation : analyseurDeTest.getRelations_trouvees()) {
 			System.out.println("Relation : "+relation.getType()+"("
@@ -27,7 +28,7 @@ public class Principale {
 		String type = null;
 		String patron;
 		int nbrTerms = 0;
-		String carAccentues="Ã»Ã¢Ã Ã©Ã¨ÃªÃ®Ã´";
+		String carAccentues="ûâàéèêîôï";
 		Pattern ExpRegPatron = Pattern.compile("\\s([A-Za-z\\s'$"+carAccentues+"]+)\\s[$]");
 		Pattern ExpRegType = Pattern.compile("([A-Za-z/"+carAccentues+"]+) [:]");
 		Pattern ExpRegNbrTerms = Pattern.compile("\\$[A-Za-z]");
@@ -40,7 +41,7 @@ public class Principale {
 			matcherNbrTerms = ExpRegNbrTerms.matcher(tmp);
 			if (matcherType.find()){
 				type=matcherType.group(1);
-				System.out.println("Type de relation ajoutÃ© : "+type);
+				System.out.println("Type de relation ajouté: "+type);
 				if (!Relation.types_de_relations.contains(type)) {
 					Relation.types_de_relations.add(type);
 					Relation.typePatrons.put(type, new ArrayList<String>());
@@ -61,15 +62,15 @@ public class Principale {
 					Relation.patronNbrTerms.put(patron,new Integer (nbrTerms));
 				}
 				else {
-					System.out.println("Patron dÃ©jÃ  dÃ©finit ---> " +patron);
+					System.out.println("Patron déja définit ---> " +patron);
 				}
 				
 			}
 		
 		}
 	
-	System.out.println("Types de relations dÃ©finis: "+Relation.types_de_relations);
-	System.out.println("Patrons dÃ©finis: "+Relation.typePatrons.values());
+	System.out.println("Types de relations définis: "+Relation.types_de_relations);
+	System.out.println("Patrons définis: "+Relation.typePatrons.values());
 	
 	}
 	

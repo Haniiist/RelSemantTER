@@ -1,4 +1,4 @@
-package Analyser;
+package Analyseur;
 
 import java.io.*;
 import java.util.*;

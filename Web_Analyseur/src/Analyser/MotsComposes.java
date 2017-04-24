@@ -1,4 +1,4 @@
-package Analyser;
+package Analyseur;
 
 // ajouter la méthode qui trouve les mots composés à l'aide des tableaux de l'objet parser s'ils ne sont pas trouvés
 //avec findMC() et appeler cette méthode dans le constructeur
