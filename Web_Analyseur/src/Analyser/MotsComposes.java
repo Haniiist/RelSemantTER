@@ -26,7 +26,9 @@ public class MotsComposes extends TextClass {
 	public MotsComposes(TextClass p){
 		this.oldText = new String(p.newText);	
 		motsTrouves = new ArrayList<Mot>();
-		this.newText=findMC();	
+		this.newText=findMC();
+		System.out.println(" Analyser mot composes "+this.newText);
+
 	}
 	
 public static Mot requeterRezo(String s){
@@ -74,6 +76,7 @@ public static Mot requeterRezo(String s){
 
 					if(compound_word !=null){
 						bool=1;
+						System.out.println(compound_word);
 						motsTrouves.add(compound_word);
 						String compound_word_underscore = compound_word.getNom().toString();
 						compound_word_underscore=compound_word_underscore.replaceAll("\\s", "_");

@@ -1,4 +1,4 @@
-package Analyser;
+package Analyseur;
 import java.util.ArrayList;
 import java.util.HashMap;
 

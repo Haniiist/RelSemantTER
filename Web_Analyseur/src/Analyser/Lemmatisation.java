@@ -69,7 +69,12 @@ public class Lemmatisation extends TextClass{
         String res = new String();
         for (int i=0; i<s.length;i++) {
 			if (howManyLemmes(s[i])==1 && getPos(s[i]).equals("Ver")) {
-				s[i]=getLemme(s[i]);
+                if(!s[i].toLowerCase().equals("est") && !s[i].toLowerCase().equals("sont") && !s[i].toLowerCase().equals("a")){
+    				System.out.println("  s[i] "+(s[i]));
+
+    				System.out.println("  Lemma "+getLemme(s[i]));
+                	s[i]=getLemme(s[i]);
+                }
 			}
 			res=res+s[i]+" ";
 		}
@@ -91,7 +96,7 @@ public class Lemmatisation extends TextClass{
 	
 
 	public String  getLemme (String mot) {
-		return map.get(mot).get(0);
+		return ((map.get(mot).get(0)).split("\\s"))[0];
 	}
 	
 	public void  getLemmes(String mot) {

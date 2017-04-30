@@ -1,4 +1,4 @@
-package Analyser;
+package Analyseur;
 
 public abstract class TextClass {
 	

@@ -1,4 +1,4 @@
-package Analyser;
+package Analyseur;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -8,12 +8,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import javax.servlet.jsp.JspWriter;
 
 
+
 public class Analyseur {
-	String carAccentues="ûâàéèêîô";
+	String carAccentues="ûâàéèêîôïî";
 	String motFr ="[A-Za-z_"+carAccentues+"']";
 	String filePath;
 	private String text;	
@@ -30,8 +30,9 @@ public class Analyseur {
 		this.filePath = filePath;
 		BufferedReader buffer = Files.newBufferedReader(Paths.get(filePath), Charset.forName("ISO-8859-1"));
 		String tmp;
+		text = new String();
 		while ((tmp=buffer.readLine()) != null) {
-			text=text+"\\n"+tmp;
+			text=text+" \\n "+tmp;
 		}
 		
 	}
@@ -54,9 +55,14 @@ public class Analyseur {
 					for (int i = 2; i <= Relation.patronNbrTerms.get(patron); i++) {
 						// Test si il n'y a pas confusion entre patrons
 						if (unique(type,matcher.group(1),patron,matcher.group(i),matcher.group())) {
-							// Test d'ambiguité et désambiguation (par contraintes sémantiques)
+							// Test d'ambiguitï¿½ et dï¿½sambiguation (par contraintes sï¿½mantiques)
 							if (!isAmbigu(patron) || type.equals(this.desambiguation(type,patron,matcher.group(1), matcher.group(i)))) {
 								System.out.println("Un patron de "+type+" est détecté :"+patron);
+								System.out.println("1 "+type+" est détecté :"+matcher.group(1));
+								System.out.println("i "+type+" est détecté :"+matcher.group(i));
+								System.out.println("0"+type+" est détecté :"+matcher.group());
+
+
 								Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i),matcher.group()));
 							}
 						}
@@ -69,7 +75,7 @@ public class Analyseur {
 	
 	private boolean unique(String type, String term1, String patron, String term2, String contexte) {
 		/*
-		 * Méthode évitant la confusion entre patrons.
+		 * Mï¿½thode ï¿½vitant la confusion entre patrons.
 		 */
 		for (ArrayList<String> Set : Relation.typePatrons.values()) {
 			for (String pattern : Set) {
@@ -77,7 +83,7 @@ public class Analyseur {
 				if (!patron.equals(pattern) && this.foundRelation(new Relation(type,term1,term2,contexte) )){
 					return false;
 				}
-				// Cas 2 : [(Terme1+Patron) ou (Patron+Terme2)] est un patron --> Interdire la création d'une relation. 
+				// Cas 2 : [(Terme1+Patron) ou (Patron+Terme2)] est un patron --> Interdire la crï¿½ation d'une relation. 
 				if (pattern.startsWith(patron+" "+term2) || pattern.startsWith(term1+" "+patron)){
 					return false;
 				}
@@ -87,14 +93,14 @@ public class Analyseur {
 	}
 	private String desambiguation(String inputType, String patron, String term1, String term2) {
 		/* 
-		 * C'est ici que seront les contraintes sémantiques.
+		 * C'est ici que seront les contraintes sï¿½mantiques.
 		 * Doit retourner le type de relation.
-		 * Utilise l'API de jeuxdemots pour vérifier les contraintes sur les termes. 
+		 * Utilise l'API de jeuxdemots pour vï¿½rifier les contraintes sur les termes. 
 		 * 
 		 * */
 		String type = inputType;
 		if (patron.equals("a des")) {
-			// Simulation de contraintes sémantiques sur le patron "a des" (A titre d'exemple).
+			// Simulation de contraintes sï¿½mantiques sur le patron "a des" (A titre d'exemple).
 			if (term1.equals("lapin")) {
 				type = "Holonymie";
 			}
@@ -111,7 +117,7 @@ public class Analyseur {
 	
 	private boolean isAmbigu(String patron) {
 		/*
-		 * Liste de patrons qui créent une ambiguité / prêtent à confusion.
+		 * Liste de patrons qui crï¿½ent une ambiguitï¿½ / prï¿½tent ï¿½ confusion.
 		 */
 		if (Arrays.asList(new String[] {"a des"}).contains(patron)) {
 			return true;
@@ -127,9 +133,12 @@ public class Analyseur {
 		 * PrÃ©traitements. 
 		 */
 		this.parser();
+		//this.mots_composes(p);
+		//his.lemmatisation(p);
 		this.mots_composes(p);
-		this.lemmatisation(mc);
-		//this.mots_composes(lm);
+		System.out.println(" mots composes "+mc.newText);
+		this.text = new String(mc.newText);
+
 
 	}
 	
@@ -140,12 +149,10 @@ public class Analyseur {
 		 */
 		
 		/*
-		 * Probleme a régler : le texte commence par null/n, essayer de l'enlver du texte
+		 * Probleme a rï¿½gler : le texte commence par null/n, essayer de l'enlver du texte
 		 */
-		String texts = text.replaceAll("null", "");
-		//System.out.println(" Analyser Parser "+texts);
-		p = new Parser(texts);
-		//System.out.println(" Analyser Parser "+p.newText);
+		p = new Parser(text);
+		System.out.println(" Analyser Parser "+p.newText);
 
 	}
 	
@@ -165,6 +172,8 @@ public class Analyseur {
 		 */
 		
 		lm = new Lemmatisation(TIp);
+		System.out.println(" Analyser Lemmatisation "+lm.newText);
+
 	}
 	
 	//Getters
@@ -197,7 +206,7 @@ public class Analyseur {
 		 */
 		out.println("Relations extraites :<br><br>");
 		for (Relation relation : this.getRelations_trouvees()) {
-			System.out.println("-"+relation.getType()+"("
+			out.println("-"+relation.getType()+"("
 										+relation.getTerm1()+","+relation.getTerm2()+")<br>");////Contexte : "+relation.getContexte()+"<br><br>");
 			}
 	}
