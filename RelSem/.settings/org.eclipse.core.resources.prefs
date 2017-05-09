@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/Analyseur/Analyseur.java=UTF-8
+encoding//src/Analyseur/Lemmatisation.java=UTF-8
+encoding//src/Analyseur/MotsComposes.java=UTF-8
+encoding//src/Analyseur/Parser.java=UTF-8
+encoding//src/Analyseur/Principale.java=UTF-8
+encoding//src/Analyseur/Relation.java=UTF-8
+encoding//src/Analyseur/TextClass.java=UTF-8
+encoding/Patterns.txt=UTF-8
+encoding/Text.txt=UTF-8
+encoding/dico.txt=UTF-8
+encoding/jdm-mc.txt=UTF-8
+encoding/mwe-jdm.txt=UTF-8

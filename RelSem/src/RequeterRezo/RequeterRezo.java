@@ -269,7 +269,7 @@ public class RequeterRezo {
         Mot mot = new Mot(nom);
         String relation;
         URL jdm = new URL(Mot.recupURL(nom));
-        System.out.println(jdm);
+        //System.out.println(jdm);
         URLConnection jd = jdm.openConnection();
         jd.setConnectTimeout(10000);
         jd.setReadTimeout(10000);

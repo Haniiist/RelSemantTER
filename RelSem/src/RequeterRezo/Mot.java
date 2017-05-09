@@ -63,7 +63,7 @@ public class Mot {
      *
      * @param nom Mot à construire
      */
-    protected Mot(String nom) {
+    public Mot(String nom) {
         this.nom = nom;
         this.mot_formate = nom;
         this.relations_entrantes = new HashMap<>();

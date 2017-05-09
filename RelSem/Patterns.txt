@@ -1,6 +1,6 @@
 Hyperonymie : 
-$x est $y 
 $x est un $y 
+$x est Ã©galement un $y
 $x est aussi un $y 
 $x est une $y
 $x est aussi une $y  
@@ -9,60 +9,62 @@ $x est un genre de $y
 $x est de la famille des $y
 $x est de la famille de la $y
 $x est de la famille du $y
+$x c'est-Ã -dire une $y 
+$x c'est-Ã -dire un $y 
 
 Holonymie :
 $x a des $y 
 $x a un $y
 $x a une $y  
-$x composé de $y et de $z
-$x composé de $y
-$x constitué de $y
-$x composée de $y
-$x constituée de $y
-$x composé de la $y
-$x constitué de la $y
-$x composée de la $y
-$x constituée de la $y
-$x composé du $y
-$x constitué du $y
-$x composé d'un $y
-$x constitué d'un $y
-$x composé d'une $y
-$x constitué d'une $y
-$x composée du $y
-$x constituée du $y
-$x composée d'un $y
-$x constituée d'un $y
-$x composée d'une $y
-$x constituée d'une $y
-$x est composé de $y
-$x est constitué de $y
-$x est composée de $y
-$x est constituée de $y
-$x est composé de la $y
-$x est constitué de la $y
-$x est composée de la $y
-$x est constituée de la $y
-$x est composé du $y
-$x est constitué du $y
-$x est composée du $y
-$x est constituée du $y
-$x est composé d'un $y
-$x est constitué d'un $y
-$x est composée d'un $y
-$x est constituée d'un $y
-$x est composé d'une $y
-$x est constitué d'une $y
-$x est composée d'une $y
-$x est constituée d'une $y
-$x constitué d'une $y et d'un $z
+$x composÃ© de $y et de $z
+$x composÃ© de $y
+$x constituÃ© de $y
+$x composÃ©e de $y
+$x constituÃ©e de $y
+$x composÃ© de la $y
+$x constituÃ© de la $y
+$x composÃ©e de la $y
+$x constituÃ©e de la $y
+$x composÃ© du $y
+$x constituÃ© du $y
+$x composÃ© d'un $y
+$x constituÃ© d'un $y
+$x composÃ© d'une $y
+$x constituÃ© d'une $y
+$x composÃ©e du $y
+$x constituÃ©e du $y
+$x composÃ©e d'un $y
+$x constituÃ©e d'un $y
+$x composÃ©e d'une $y
+$x constituÃ©e d'une $y
+$x est composÃ© de $y
+$x est constituÃ© de $y
+$x est composÃ©e de $y
+$x est constituÃ©e de $y
+$x est composÃ© de la $y
+$x est constituÃ© de la $y
+$x est composÃ©e de la $y
+$x est constituÃ©e de la $y
+$x est composÃ© du $y
+$x est constituÃ© du $y
+$x est composÃ©e du $y
+$x est constituÃ©e du $y
+$x est composÃ© d'un $y
+$x est constituÃ© d'un $y
+$x est composÃ©e d'un $y
+$x est constituÃ©e d'un $y
+$x est composÃ© d'une $y
+$x est constituÃ© d'une $y
+$x est composÃ©e d'une $y
+$x est constituÃ©e d'une $y
+$x constituÃ© d'une $y et d'un $z
 $x a comme partie le $y 
 $x se compose de $y
 $x a comme partie la $y 
 $x se compose de la $y
 $x se compose du $y
 
-Méronymie :
+MÃ©ronymie :
 $x fait partie du $y
 $x fait partie de la $y
 $x fait partie des $y
@@ -83,90 +85,99 @@ $x est une partie de $y
 $x est une partie du $y
 $x est une partie de la $y
 
-Causalité/Cause : 
-$x cause $y 
+CausalitÃ©/Cause : 
+$x cause un $y 
 $x affecte $y
-$x provoque $y
+$x provoque un $y
+$x peut Ãªtre provoquÃ© par une $y
+$x peut Ãªtre provoquÃ© par un $y   
+$x peut Ãªtre provoquÃ©e par une $y 
+$x peut Ãªtre provoquÃ©e par un $y 
+$x peut Ãªtre provoquÃ© par une $y ou $z
+$x peut Ãªtre provoquÃ© par un $y ou $z  
+$x peut Ãªtre provoquÃ©e par une $y ou $z
+$x peut Ãªtre provoquÃ©e par un $y ou $z
 $x affecte le $y
 $x affecte la $y
 $x affecte les $y
-$x n’affecte que les $y
-$x n’affecte que la $y
-$x n’affecte que le $y
+$x n'affecte que les $y
+$x n'affecte que la $y
+$x n'affecte que le $y
 $x provient du $y
 $x provoque le $y
 $x provient de la $y
 $x provoque la $y 
-$x déclenchant un $y 
+$x dÃ©clenchant un $y 
 $x peut produire un $y
-$x déclenchant une $y 
+$x dÃ©clenchant une $y 
 $x peut produire une $y
-$x déclenchant des $y 
+$x dÃ©clenchant des $y 
 $x peut produire des $y
-$x déclenchant la $y 
+$x dÃ©clenchant la $y 
 $x peut produire la $y
-$x déclenchant les $y 
+$x dÃ©clenchant les $y 
 $x peut produire les $y
 $x menant aux $y
 $x menant au $y
-$x menant à la $y
-$x menant à un $y
-$x menant à une $y
+$x menant Ã Â la $y
+$x menant Ã Â un $y
+$x menant Ã Â une $y
 
-Causalité/Effet : 
-$x dû à $y
-$x dû à un $y
-$x dû à une $y
-$x dû à des $y
-$x dû au $y
-$x dû aux $y
-$x dûe à $y
-$x dûe à un $y
-$x dûe à une $y
-$x dûe à des $y
-$x dûe au $y
-$x dûe aux $y
-$x est causé par $y 
-$x est causée par $y 
-$x est causé par le $y 
-$x est causée par le $y
-$x est causé par la $y 
-$x est causée par la $y
-$x est causé par les $y 
-$x est causée par les $y
-$x est causé par un $y 
-$x est causée par un $y
-$x est causé par une $y 
-$x est causée par une $y
-$x est causé par des $y 
-$x est causée par des $y
-$x est provoqué par $y
-$x est provoquée par $y
-$x est provoqué par le $y 
-$x est provoquée par le $y
-$x est provoqué par la $y 
-$x est provoquée par la $y
-$x est provoqué par les $y 
-$x est provoquée par les $y
-$x est provoqué par un $y 
-$x est provoquée par un $y
-$x est provoqué par une $y 
-$x est provoquée par une $y
-$x est provoqué par des $y 
-$x est provoquée par des $y
+CausalitÃ©/Effet : 
+$x dÃ» Ã Â $y
+$x dÃ» Ã Â un $y
+$x dÃ» Ã Â une $y
+$x dÃ» Ã Â des $y
+$x dÃ» au $y
+$x dÃ» aux $y
+$x dÃ»e Ã Â $y
+$x dÃ»e Ã Â un $y
+$x dÃ»e Ã Â une $y
+$x dÃ»e Ã Â des $y
+$x dÃ»e au $y
+$x dÃ»e aux $y
+$x est causÃ© par $y 
+$x est causÃ©e par $y 
+$x est causÃ© par le $y 
+$x est causÃ©e par le $y
+$x est causÃ© par la $y 
+$x est causÃ©e par la $y
+$x est causÃ© par les $y 
+$x est causÃ©e par les $y
+$x est causÃ© par un $y 
+$x est causÃ©e par un $y
+$x est causÃ© par une $y 
+$x est causÃ©e par une $y
+$x est causÃ© par des $y 
+$x est causÃ©e par des $y
+$x est provoquÃ© par $y
+$x est provoquÃ©e par $y
+$x est provoquÃ© par le $y 
+$x est provoquÃ©e par le $y
+$x est provoquÃ© par la $y 
+$x est provoquÃ©e par la $y
+$x est provoquÃ© par les $y 
+$x est provoquÃ©e par les $y
+$x est provoquÃ© par un $y 
+$x est provoquÃ©e par un $y
+$x est provoquÃ© par une $y 
+$x est provoquÃ©e par une $y
+$x est provoquÃ© par des $y 
+$x est provoquÃ©e par des $y
 
 Possession : 
 $x a un $y
 $x a une $y
 $x a des $y
 
-Caractérisation :
-$x est caractérisé par $y
-$x est caractérisé par un $y
-$x est caractérisé par une $y
-$x se caractérise par $y
-$x se caractérise par un $y
-$x se caractérise par une $y
+CaractÃ©risation :
+$x est caractÃ©risÃ© par $y
+$x est caractÃ©risÃ© par un $y
+$x est caractÃ©risÃ© par une $y
+$x se caractÃ©rise par $y
+$x se caractÃ©rise par un $y
+$x se caractÃ©rise par une $y
+$x Ã  base de $y
 
 Opposition :
 $x est l'inverse de $y
@@ -174,3 +185,41 @@ $x est l'inverse de $y
 Localisation :
 $x au niveau de $y
 $x se trouve dans $y
+$x se trouvent souvent localisÃ©es au niveau de la $y
+$x se trouve souvent localisÃ©es au niveau de la $y
+$x se trouvent localisÃ©es au niveau de la $y
+$x se trouve localisÃ©es au niveau de la $y
+
+Accompagnement :
+$x associÃ© Ã  des $y
+$x associÃ© Ã  un $y
+$x associÃ© Ã  une $y
+$x associÃ©e Ã  des $y
+$x associÃ©e Ã  un $y
+$x associÃ©e Ã  une $y
+$x s'accompagne d'un $y
+$x s'accompagne d'une $y
+$x s'accompagne de $y
+$x est souvent accompagnÃ© par $y
+$x est souvent accompagnÃ©e par $y
+
+Traitement :
+$x traitÃ© par $y
+$x traitÃ©e par $y
+$x soignÃ© par $y
+$x soignÃ©e par $y
+$x peut Ãªtre corrigÃ© par une $y
+$x peut Ãªtre corrigÃ© par un $y
+$x peut Ãªtre corrigÃ©e par une $y
+$x peut Ãªtre corrigÃ©e par un $y
+$x rra $y comme traitement mÃ©dical
+
+Signe :
+$x se manifeste par un $y
+$x se manifestent par un $y
+$x qui se manifeste par la $y
+$x qui se manifestent par la $y
+$x rra $y pour symptÃ´me
+$x rra $y pour symptÃ´mes
+$x rra $y pour signe
+$x rra $y pour signes
