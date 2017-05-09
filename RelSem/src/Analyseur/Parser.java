@@ -58,6 +58,16 @@ public class Parser extends TextClass {
             deleted.add(group);
     	}
     	str=matcher.replaceAll("");
+    	
+    	pattern = Pattern.compile("\\{\\{([0-9]+e)\\|((.)+?)}\\}");
+        matcher = pattern.matcher(str);
+        while (matcher.find()) {
+        	String group = matcher.group(0);
+        	String group1 = matcher.group(1);
+        	String group2 = matcher.group(2);
+        	str=str.replace(group, group1+" "+group2);
+    	}
+    	//str=matcher.replaceAll("");
         
         pattern = Pattern.compile("\\{\\{(.)+?\\}\\}");
         matcher = pattern.matcher(str);
@@ -82,6 +92,14 @@ public class Parser extends TextClass {
             String group = matcher.group(0);
             deleted.add(group);
         }
+        str=matcher.replaceAll("");
+        
+        pattern = Pattern.compile("\\[\\[(Image:(.)+?)\\]\\]\n");
+        matcher = pattern.matcher(str);
+        while (matcher.find()) {
+        	String group = matcher.group(0);
+        	deleted.add(group);
+    	}
         str=matcher.replaceAll("");
     
         pattern = Pattern.compile("\\[\\[([^|]+?)\\]\\]");
@@ -130,11 +148,24 @@ public class Parser extends TextClass {
     		String group = matcher.group(1).trim();
 	        sectionTexts.add(group);
         }
+    	
+    	pattern = Pattern.compile("<!\\-\\-\n(.)+?\n\\-\\->");
+    	matcher = pattern.matcher(str);
+    	while (matcher.find()) {
+    		String group = matcher.group(1);
+	        deleted.add(group);
+        }
+    	str=matcher.replaceAll("");
+    	
+    	str=str.replaceAll("\\(|\\)","");
+    	//str=str.replaceAll("\\s\\((.)+?\\)","");
     
     	str=str.replaceAll("(\\h){2,}"," ");
     	str=str.replaceAll("(\n){3,}","\n\n");
     	str=str.replace("."," .");
     	str=str.replace(","," ,");
+    	str=str.replace("’","'");
+    	str=str.replace("(,)+",",");
     	str=str.trim();
 		return str;
 		

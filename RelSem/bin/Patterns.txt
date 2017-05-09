@@ -1,5 +1,13 @@
 Hyperonymie : 
-$x est un $y 
+$x est un $y
+$x est un des $y
+$x est une des $y
+$x qui est un $y
+$x qui est un des $y
+$x qui est une des $y 
+$x , qui est un $y
+$x , qui est un des $y
+$x , qui est une des $y  
 $x est également un $y
 $x est aussi un $y 
 $x est une $y
@@ -15,7 +23,10 @@ $x c'est-à-dire un $y
 Holonymie :
 $x a des $y 
 $x a un $y
-$x a une $y  
+$x a une $y
+$x qui a des $y 
+$x qui a un $y
+$x qui a une $y    
 $x composé de $y et de $z
 $x composé de $y
 $x constitué de $y
@@ -93,10 +104,6 @@ $x peut être provoqué par une $y
 $x peut être provoqué par un $y   
 $x peut être provoquée par une $y 
 $x peut être provoquée par un $y 
-$x peut être provoqué par une $y ou $z
-$x peut être provoqué par un $y ou $z  
-$x peut être provoquée par une $y ou $z
-$x peut être provoquée par un $y ou $z
 $x affecte le $y
 $x affecte la $y
 $x affecte les $y
@@ -122,6 +129,23 @@ $x menant au $y
 $x menant à la $y
 $x menant à un $y
 $x menant à une $y
+$x génère une  $y
+$x génère un  $y
+$x entraine des $y
+$x entraine un $y
+$x entraine une $y
+$x entraine des $y , $z
+$x entraine un $y , $z
+$x entraine une $y , $z
+$x peuvent provoquer une $z
+$x peut provoquer une $z
+$x génère une $y
+$x génère un $y
+$x génère des $y
+$x génère une $y , des $z
+$x génère un $y , des $z
+$x génère des $y , des $z
+
 
 Causalité/Effet : 
 $x dû à $y
@@ -169,6 +193,8 @@ Possession :
 $x a un $y
 $x a une $y
 $x a des $y
+$x possède une $y
+$x possède un $y
 
 Caractérisation :
 $x est caractérisé par $y
@@ -178,6 +204,9 @@ $x se caractérise par $y
 $x se caractérise par un $y
 $x se caractérise par une $y
 $x à base de $y
+$x possède une $y
+$x possède un $y
+
 
 Opposition :
 $x est l'inverse de $y
@@ -189,6 +218,14 @@ $x se trouvent souvent localisées au niveau de la $y
 $x se trouve souvent localisées au niveau de la $y
 $x se trouvent localisées au niveau de la $y
 $x se trouve localisées au niveau de la $y
+$x se trouvent souvent localisées au niveau de la $y , de la $z
+$x se trouve souvent localisées au niveau de la $y , de la $z
+$x se trouvent localisées au niveau de la $y , de la $z
+$x se trouve localisées au niveau de la $y , de la $z
+$x se trouvent souvent localisées au niveau de la $y , de la $z et de la $w
+$x se trouve souvent localisées au niveau de la $y , de la $z et de la $w
+$x se trouvent localisées au niveau de la $y , de la $z et de la $w
+$x se trouve localisées au niveau de la $y , de la $z et de la $w
 
 Accompagnement :
 $x associé à des $y
@@ -197,6 +234,12 @@ $x associé à une $y
 $x associée à des $y
 $x associée à un $y
 $x associée à une $y
+$x est associé à des $y
+$x est associé à un $y
+$x est associé à une $y
+$x est associée à des $y
+$x est associée à un $y
+$x est associée à une $y
 $x s'accompagne d'un $y
 $x s'accompagne d'une $y
 $x s'accompagne de $y
@@ -206,6 +249,38 @@ $x est souvent accompagnée par $y
 Traitement :
 $x traité par $y
 $x traitée par $y
+$x traité par un $y
+$x traité par une $y
+$x traitée par un $y
+$x traitée par une $y
+$x traité par le $y
+$x traité par la $y
+$x traitée par le $y
+$x traitée par la $y
+$x couramment traité par un $y
+$x couramment traité par une $y
+$x couramment traitée par un $y
+$x couramment traitée par une $y
+$x couramment traité par le $y
+$x couramment traité par la $y
+$x couramment traitée par le $y
+$x couramment traitée par la $y
+$x est traité par un $y
+$x est traité par une $y
+$x est traitée par un $y
+$x est traitée par une $y
+$x est traité par le $y
+$x est traité par la $y
+$x est traitée par le $y
+$x est traitée par la $y
+$x est couramment traité par un $y
+$x est couramment traité par une $y
+$x est couramment traitée par un $y
+$x est couramment traitée par une $y
+$x est couramment traité par le $y
+$x est couramment traité par la $y
+$x est couramment traitée par le $y
+$x est couramment traitée par la $y
 $x soigné par $y
 $x soignée par $y
 $x peut être corrigé par une $y
@@ -216,6 +291,9 @@ $x rra $y comme traitement médical
 
 Signe :
 $x se manifeste par un $y
+$x se manifeste par une $y
+$x qui se manifeste par un $y
+$x qui se manifeste par une $y
 $x se manifestent par un $y
 $x qui se manifeste par la $y
 $x qui se manifestent par la $y

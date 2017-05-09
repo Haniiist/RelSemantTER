@@ -15,8 +15,8 @@ import java.util.regex.Pattern;
 
 
 public class Analyseur {
-	String carAccentues="àâäçèéêëîïôöùûüÀÂÄÇÈÉÊËÎÏÔÖÙÛÜ\\-";
-	String motFr ="[A-Za-z_"+carAccentues+"']";
+	String carAccentues=",àâäçèéêëîïôöùûüÀÂÄÇÈÉÊËÎÏÔÖÙÛÜ\\-";
+	String motFr ="[A-Za-z0-9_"+carAccentues+"']";
 	String filePath;
 	private String text;	
 	private ArrayList<Relation> Relations_trouvees = new ArrayList<Relation>();

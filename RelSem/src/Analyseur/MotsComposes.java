@@ -20,6 +20,8 @@ public class MotsComposes extends TextClass {
 
 	ArrayList<String> motsTrouves;
 	HashSet<String> wordList;
+	HashSet<String> nonExistingWords;
+	Parser pr = null;
 
 
 
@@ -29,31 +31,58 @@ public class MotsComposes extends TextClass {
 		newText = new String();
 		motsTrouves = new ArrayList<String>();
 		wordList = new HashSet<String>();
+		nonExistingWords = new HashSet<String>();
 		createWordList("jdm-mc.txt");
 
 	}
+
 
 	public MotsComposes(TextClass p) throws IOException{
 		this.oldText = new String(p.newText);	
 		wordList = new HashSet<String>();
+		nonExistingWords = new HashSet<String>();
 		createWordList("jdm-mc.txt");
 		motsTrouves = new ArrayList<String>();
+		if( p instanceof Parser){
+			pr = (Parser) p;
+			for (String str : pr.linksWiki) {
+				if (str.contains(" ")){
+					motsTrouves.add(str);
+					if (!lookUp(str)) 
+						nonExistingWords.add(str);
+					this.oldText=this.oldText.replace(str,str.replace(" ", "_"));
+				}
+			}
+		}
 		this.newText=findMC();
+		if (pr!=null)
+			addWordsToFile();
 		//System.out.println(" Analyser mot composes "+this.newText);
-
-
 	}
-    
+
+	
+	public void addWordsToFile () throws IOException {
+		FileWriter f = new FileWriter("jdm-mc.txt",true);
+		BufferedWriter bw = new BufferedWriter(f);
+		String outS = new String();
+		for (String s : nonExistingWords) {
+			outS = outS+"\n"+s+";";
+		}
+		bw.write(outS);
+		bw.close();
+		f.close();
+	}
+
 	public void createWordList (String filePath) throws IOException{
 
-		    String line;
-		    BufferedReader reader = Files.newBufferedReader(Paths.get(filePath), StandardCharsets.UTF_8);
-		    while ((line = reader.readLine()) != null)
-		    {
-		        wordList.add(line.substring(0, line.length()-1));
-		    }
+		String line;
+		BufferedReader reader = Files.newBufferedReader(Paths.get(filePath), StandardCharsets.UTF_8);
+		while ((line = reader.readLine()) != null)
+		{
+			wordList.add(line.substring(0, line.length()-1));
+		}
 	}
-	
+
 	public static Mot requeterRezo(String s){
 
 		RequeterRezo r = new RequeterRezo();
@@ -82,7 +111,7 @@ public class MotsComposes extends TextClass {
 
 		String str = (new String(oldText));
 		String[] avoid = {"du","la","des","les","un","une","par","elle","il","mais","ou","est","et","donc","or","ni","car",
-				"","_","de"," ","à"};
+				"","_","de"," ","à","dans","dont"};
 		String[] phrase = str.split("[.|;|,|==|\\n|?|!|:|(|)|\\[|\\]|«|»|“|”|\"]+");
 		for(int j=0;j<phrase.length;j++){
 			int i =0;
@@ -136,11 +165,11 @@ public class MotsComposes extends TextClass {
 				}
 			}
 		}
-	      for(String s5 : motsTrouves)
-	    	  System.out.println("***************"+s5);
+		for(String s5 : motsTrouves)
+			System.out.println("***************"+s5);
 		return str;	
 	}
 	public static void main(String[] args) throws Exception {
-      System.out.println((new MotsComposes()).lookUp("radiographie du thorax"));
+		System.out.println((new MotsComposes()).lookUp("difficulté d'initiation"));
 	}
 }
