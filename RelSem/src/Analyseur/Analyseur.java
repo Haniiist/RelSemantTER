@@ -59,11 +59,14 @@ public class Analyseur {
 						if (unique(type,matcher.group(1),patron,matcher.group(i),matcher.group())) {
 							// Test d'ambiguitï¿½ et dï¿½sambiguation (par contraintes sï¿½mantiques)
 							if (!isAmbigu(patron) || type.equals(this.desambiguation(type,patron,matcher.group(1), matcher.group(i)))) {
-								/*System.out.println("Un patron de "+type+" est détecté :"+patron);
-								System.out.println("1 "+type+" est détecté :"+matcher.group(1));
-								System.out.println("i "+type+" est détecté :"+matcher.group(i));
-								System.out.println("0"+type+" est détecté :"+matcher.group());*/
-								Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i),matcher.group()));
+								if (!underConstraint(type, patron) || semanticConstraint(type,matcher.group(1),patron,matcher.group(i))){
+									/*System.out.println("Un patron de "+type+" est détecté :"+patron);
+									System.out.println("1 "+type+" est détecté :"+matcher.group(1));
+									System.out.println("i "+type+" est détecté :"+matcher.group(i));
+									System.out.println("0"+type+" est détecté :"+matcher.group());*/
+									Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i),matcher.group()));
+								}
+								
 							}
 						}
 					}
@@ -72,6 +75,71 @@ public class Analyseur {
 		}
 	}
 	
+	private boolean underConstraint(String type, String patron) {
+		// Méthode vérifiant si le patron définit une contrainte sémantique
+		
+		if (Relation.patronConstraint.containsKey(type+" : "+patron)) {
+			return true;
+		}
+		else return false;
+		
+	}
+	private boolean semanticConstraint(String type, String term1, String patron, String term2) throws IOException {
+		/*
+		 * Méthode vérifiant la satisfiabilité des contraintes sémantiques.
+		 */
+		
+		boolean satisfaction = true;
+		Lemmatisation abu = new Lemmatisation();
+		String strExpReg ="\\$([xy]):\\[(.+)\\]";
+		Pattern ExpReg= Pattern.compile(strExpReg);
+		if (Relation.patronConstraint.get(type+" : "+patron).contains(",")) {
+			for (String constraint : Relation.patronConstraint.get(type+" : "+patron).split(",")) {
+				if (constraint.contains("$")) {
+					Matcher matcher = ExpReg.matcher(constraint);
+					if (matcher.find()){
+						if (matcher.group(1).equals("x")) {
+							if (!abu.getPos(term1).equals(matcher.group(2))) {
+								return false;
+							}
+						}
+						else if (matcher.group(1).equals("y")) {
+							if (!abu.getPos(term2).equals(matcher.group(2))) {
+								return false;
+							}
+						}
+						
+					}
+					else {
+						System.out.println("!!!!!! EXPRESSION REGULIERE N'A PAS FONCTIONNE !!!!!! AVEC VIRGULE");
+					}
+				}
+			}
+		}
+		else {
+			if (Relation.patronConstraint.get(type+" : "+patron).contains("$")) {
+				Matcher matcher = ExpReg.matcher(Relation.patronConstraint.get(type+" : "+patron));
+				if (matcher.find()){
+					if (matcher.group(1).equals("x")) {
+						if (!abu.getPos(term1).equals(matcher.group(2))) {
+							return false;
+						}
+					}
+					else if (matcher.group(1).equals("y")) {
+						if (!abu.getPos(term2).equals(matcher.group(2))) {
+							return false;
+						}
+					}
+					
+				}
+				else {
+					System.out.println("!!!!!! EXPRESSION REGULIERE N'A RIEN TROUVE !!!!!!");
+				}
+			}
+		}
+		return satisfaction;
+		
+	}
 	private boolean unique(String type, String term1, String patron, String term2, String contexte) {
 		/*
 		 * Mï¿½thode ï¿½vitant la confusion entre patrons.

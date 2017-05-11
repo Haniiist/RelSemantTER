@@ -13,7 +13,7 @@ public class Principale {
 
 	public static void main(String[] args) throws IOException {
 		fetchPatrons ("Patterns.txt");
-		Analyseur analyseurDeTest=new Analyseur("/auto_home/msebih/Articles/T/Transsexualisme.txt");
+		Analyseur analyseurDeTest=new Analyseur("Text.txt");
 		//Analyseur analyseurDeTest=new Analyseur("Text.txt");
 		analyseurDeTest.analyser();
 		for (Relation relation : analyseurDeTest.getRelations_trouvees()) {
@@ -26,6 +26,8 @@ public class Principale {
 
 		BufferedReader buffer = Files.newBufferedReader(Paths.get(filePath), StandardCharsets.UTF_8);
 		String tmp;
+		String tmc = "none";
+		String tmpComp;
 		String type = null;
 		String patron;
 		int nbrTerms = 0;
@@ -36,7 +38,15 @@ public class Principale {
 		Matcher matcherPatron ;
 		Matcher matcherType ;
 		Matcher matcherNbrTerms ;
-		while ((tmp=buffer.readLine()) != null) {
+		while ((tmpComp=buffer.readLine()) != null) {
+			if (tmpComp.contains("-->")) {
+				tmp=tmpComp.split("-->")[0].trim();
+				tmc=tmpComp.split("-->")[1].trim();
+			}
+			else {
+				tmp=tmpComp;
+				tmc="none";
+			}
 			matcherPatron = ExpRegPatron.matcher(tmp);
 			matcherType = ExpRegType.matcher(tmp);
 			matcherNbrTerms = ExpRegNbrTerms.matcher(tmp);
@@ -61,6 +71,10 @@ public class Principale {
 					patron = patron.replaceAll("\\s\\$[A-Za-z]+\\s", "\\$");
 					Relation.typePatrons.get(type).add(patron);
 					Relation.patronNbrTerms.put(patron,new Integer (nbrTerms));
+					if (!tmc.equals("none")) {
+						Relation.patronConstraint.put(type+" : "+patron,tmc);
+					}
+					
 				}
 				else {
 					//System.out.println("Patron déja définit ---> " +patron);
@@ -72,6 +86,7 @@ public class Principale {
 	
 	//System.out.println("Types de relations définis: "+Relation.types_de_relations);
 	//System.out.println("Patrons définis: "+Relation.typePatrons.values());
+		System.out.println("Patrons avec contraintes: "+Relation.patronConstraint);
 	
 	}
 	

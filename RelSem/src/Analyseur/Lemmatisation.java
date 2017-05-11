@@ -16,7 +16,8 @@ public class Lemmatisation extends TextClass{
 	//String newText;
 	static HashMap<String, ArrayList<String>> map;
 	
-	public Lemmatisation () {
+	public Lemmatisation () throws IOException {
+		createDico("dico.txt");
 		oldText=new String();
 		newText=new String();
 	}

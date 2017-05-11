@@ -6,6 +6,7 @@ public class Relation {
 	public static ArrayList<String> types_de_relations = new ArrayList<String>();
 	public static HashMap<String, ArrayList<String>> typePatrons = new HashMap<String, ArrayList<String>>();
 	public static HashMap<String, Integer> patronNbrTerms = new HashMap<String, Integer>(); 
+	public static HashMap<String, String> patronConstraint = new HashMap<String, String>(); 
 	private String type;//Partitative,mÃ©ronymie...
 	private String term1;//Premier terme liÃ© par la relation.
 	private String term2;//DeuxiÃ¨me terme liÃ© par la relation.

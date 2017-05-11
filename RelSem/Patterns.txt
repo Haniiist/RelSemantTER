@@ -197,6 +197,7 @@ $x possède une $y
 $x possède un $y
 
 Caractérisation :
+$x est $y --> $y:[Adj]
 $x est caractérisé par $y
 $x est caractérisé par un $y
 $x est caractérisé par une $y

@@ -10,3 +10,4 @@ La fille a des boucles_d'oreilles.
 Le lapin a des oreilles.
 La fille est une bonne_cuisinière.
 La fievre a rest comme traitement médical.
+Le virus est dangereux.
