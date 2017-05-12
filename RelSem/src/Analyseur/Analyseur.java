@@ -45,12 +45,23 @@ public class Analyseur {
 			for (String patron : Relation.typePatrons.get(type)) {
 				// Construction de la Regex pour l'extraction des termes
 				String strExpReg = "";
+				boolean postPatron = false;
+				if (patron.endsWith("$Post")) {
+					postPatron=true;
+					patron = patron.replace("$Post", "");
+				}
 				for (int i = 0; i < patron.split("\\$").length; i++) {
 					strExpReg+="("+motFr+"+)\\s"
 							+patron.split("\\$")[i].replace(" ", "\\s")+"\\s";
 				}
-				strExpReg+="("+motFr+"+)";
-				
+				if (!postPatron) {
+					strExpReg+="("+motFr+"+)";
+					}
+				else {
+					strExpReg = strExpReg.substring(0,strExpReg.length()-2);
+					patron = patron+"$Post";
+				}
+												
 				Pattern ExpReg= Pattern.compile(strExpReg);
 				Matcher matcher = ExpReg.matcher(this.text);
 				while (matcher.find()){
@@ -60,11 +71,7 @@ public class Analyseur {
 							// Test d'ambiguitï¿½ et dï¿½sambiguation (par contraintes sï¿½mantiques)
 							if (!isAmbigu(patron) || type.equals(this.desambiguation(type,patron,matcher.group(1), matcher.group(i)))) {
 								if (!underConstraint(type, patron) || semanticConstraint(type,matcher.group(1),patron,matcher.group(i))){
-									/*System.out.println("Un patron de "+type+" est détecté :"+patron);
-									System.out.println("1 "+type+" est détecté :"+matcher.group(1));
-									System.out.println("i "+type+" est détecté :"+matcher.group(i));
-									System.out.println("0"+type+" est détecté :"+matcher.group());*/
-									Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i),matcher.group()));
+									Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i),matcher.group()));									
 								}
 								
 							}
@@ -147,11 +154,11 @@ public class Analyseur {
 		for (ArrayList<String> Set : Relation.typePatrons.values()) {
 			for (String pattern : Set) {
 				// Cas 1 : Patron inclut dans un autre --> Interdire la duplicaion. 
-				if (!patron.equals(pattern) && this.foundRelation(new Relation(type,term1,term2,contexte) )){
+				if (!patron.equals(pattern) && this.foundRelation(new Relation(type,term1,term2,contexte))){
 					return false;
 				}
 				// Cas 2 : [(Terme1+Patron) ou (Patron+Terme2)] est un patron --> Interdire la crï¿½ation d'une relation. 
-				if (pattern.startsWith(patron+" "+term2) || pattern.startsWith(term1+" "+patron)){
+				if (pattern.contains(patron+" "+term2) || pattern.contains(term1+" "+patron)){
 					return false;
 				}
 			}

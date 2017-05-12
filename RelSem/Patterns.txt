@@ -223,7 +223,7 @@ $x se trouvent souvent localisées au niveau de la $y , de la $z
 $x se trouve souvent localisées au niveau de la $y , de la $z
 $x se trouvent localisées au niveau de la $y , de la $z
 $x se trouve localisées au niveau de la $y , de la $z
-$x se trouvent souvent localisées au niveau de la $y , de la $z et de la $w
+$x se trouvent souvent localisées au niveau de la $y de la $z et de la $w
 $x se trouve souvent localisées au niveau de la $y , de la $z et de la $w
 $x se trouvent localisées au niveau de la $y , de la $z et de la $w
 $x se trouve localisées au niveau de la $y , de la $z et de la $w
@@ -288,7 +288,7 @@ $x peut être corrigé par une $y
 $x peut être corrigé par un $y
 $x peut être corrigée par une $y
 $x peut être corrigée par un $y
-$x rra $y comme traitement médical
+$x a $y comme traitement_médical $Post
 
 Signe :
 $x se manifeste par un $y

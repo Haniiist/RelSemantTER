@@ -32,7 +32,7 @@ public class Principale {
 		String patron;
 		int nbrTerms = 0;
 		String carAccentues=",àâäçèéêëîïôöùûüÀÂÄÇÈÉÊËÎÏÔÖÙÛÜ\\-";
-		Pattern ExpRegPatron = Pattern.compile("\\s([A-Za-z\\s'$"+carAccentues+"]+)\\s[$]");
+		Pattern ExpRegPatron = Pattern.compile("\\s([A-Za-z\\s_'$"+carAccentues+"]+)\\s([$].*)");
 		Pattern ExpRegType = Pattern.compile("([A-Za-z/"+carAccentues+"]+) [:]");
 		Pattern ExpRegNbrTerms = Pattern.compile("\\$[A-Za-z]");
 		Matcher matcherPatron ;
@@ -65,10 +65,14 @@ public class Principale {
 					nbrTerms++;
 				}
 				if (!Relation.types_de_relations.contains(type)) {
-					//System.err.println("Type de relation inconnu pour le patron : "+patron);
+					System.err.println("Type de relation inconnu pour le patron : "+patron);
 				}
 				else if (!Relation.typePatrons.get(type).contains(patron)) {
 					patron = patron.replaceAll("\\s\\$[A-Za-z]+\\s", "\\$");
+					if (matcherPatron.group(2).contains("$Post")) {
+						patron += "$Post";
+						nbrTerms--;
+					}
 					Relation.typePatrons.get(type).add(patron);
 					Relation.patronNbrTerms.put(patron,new Integer (nbrTerms));
 					if (!tmc.equals("none")) {
@@ -86,7 +90,7 @@ public class Principale {
 	
 	//System.out.println("Types de relations définis: "+Relation.types_de_relations);
 	//System.out.println("Patrons définis: "+Relation.typePatrons.values());
-		System.out.println("Patrons avec contraintes: "+Relation.patronConstraint);
+	//System.out.println("Patrons avec contraintes: "+Relation.patronConstraint);
 	
 	}
 	
