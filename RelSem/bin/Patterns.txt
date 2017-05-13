@@ -12,7 +12,7 @@ $x est également un $y
 $x est aussi un $y 
 $x est une $y
 $x est aussi une $y  
-$x est une sorte de $y
+$x est une sorte_de $y
 $x est un genre de $y 
 $x est de la famille des $y
 $x est de la famille de la $y

@@ -1,18 +1,13 @@
 Hyperonymie : 
    - $x est un $y
-   - $x est un des $y
-   - $x est une des $y
+   - $x sont des $y
    - $x qui est un $y
-   - $x qui est un des $y
-   - $x qui est une des $y 
-   - $x , qui est un $y
-   - $x , qui est un des $y
-   - $x , qui est une des $y  
+   - $x qui sont des $y  
    - $x est également un $y
    - $x est aussi un $y 
    - $x est une $y
    - $x est aussi une $y  
-   - $x est une sorte de $y
+   - $x est une sorte_de $y
    - $x est un genre de $y 
    - $x est de la famille des $y
    - $x est de la famille de la $y
@@ -134,17 +129,18 @@ Causalité/Cause :
    - $x entraine des $y
    - $x entraine un $y
    - $x entraine une $y
-   - $x entraine des $y , $z
-   - $x entraine un $y , $z
-   - $x entraine une $y , $z
+   - $x entraine des $y et des $z
+   - $x entraine un $y et un $z
+   - $x entraine une $y et un $z
+   - $x entraine une $y et une $z
    - $x peuvent provoquer une $z
    - $x peut provoquer une $z
    - $x génère une $y
    - $x génère un $y
    - $x génère des $y
-   - $x génère une $y , des $z
-   - $x génère un $y , des $z
-   - $x génère des $y , des $z
+   - $x génère une $y et des $z
+   - $x génère un $y et des $z
+   - $x génère des $y et des $z
 
 
 Causalité/Effet : 
@@ -246,6 +242,16 @@ Accompagnement :
    - $x s'accompagne de $y
    - $x est souvent accompagné par $y
    - $x est souvent accompagnée par $y
+   - $x est souvent accompagné de $y
+   - $x est souvent accompagnée de $y
+   - $x souvent accompagné par $y
+   - $x souvent accompagnée par $y
+   - $x souvent accompagné de $y
+   - $x souvent accompagnée de $y
+   - $x accompagné par $y
+   - $x accompagnée par $y
+   - $x accompagné de $y
+   - $x accompagnée de $y
 
 Traitement :
    - $x traité par $y
@@ -288,7 +294,7 @@ Traitement :
    - $x peut être corrigé par un $y
    - $x peut être corrigée par une $y
    - $x peut être corrigée par un $y
-   - $x rra $y comme traitement médical
+   - $x a $y comme traitement_médical $Post
 
 Signe :
    - $x se manifeste par un $y
@@ -298,7 +304,7 @@ Signe :
    - $x se manifestent par un $y
    - $x qui se manifeste par la $y
    - $x qui se manifestent par la $y
-   - $x rra $y pour symptôme
-   - $x rra $y pour symptômes
-   - $x rra $y pour signe
-   - $x rra $y pour signes
+   - $x a $y pour symptôme $Post
+   - $x a $y pour symptômes $Post
+   - $x a $y pour signe $Post
+   - $x a $y pour signes $Post
