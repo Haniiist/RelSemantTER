@@ -92,7 +92,19 @@ public class Lemmatisation extends TextClass{
 			else
 				res=res+s[i]+" ";
 		}
+		res=res.replaceAll("\\s+", " ");
 		return res;
+	}
+
+	public String  lemmatize (String mot) {
+		ArrayList<String> tab = map.get(mot);
+		if (tab!=null){ 
+			if (tab.size()==1){
+				if (tab.get(0).split("	")[1].substring(0, 3).equals("Ver"));
+				return tab.get(0).split("\\s")[0];
+			}
+		}
+		return mot;
 	}
 
 	public int howManyLemmes (String mot) {
@@ -113,16 +125,7 @@ public class Lemmatisation extends TextClass{
 		return ((map.get(mot).get(0)).split("\\s"))[0];
 	}
 
-	public String  lemmatize (String mot) {
-		ArrayList<String> tab = map.get(mot);
-		if (tab!=null){ 
-			if (tab.size()==1){
-				if (tab.get(0).split("	")[1].substring(0, 3).equals("Ver"));
-				return tab.get(0).split("\\s")[0];
-			}
-		}
-		return mot;
-	}
+
 
 	/*public void  getLemmes(String mot) {
 		if (!map.keySet().contains(mot)) String res = mot;ystem.out.println("Le mot n'existe pas");
@@ -161,8 +164,7 @@ public class Lemmatisation extends TextClass{
 	}
 
 	public String getPos(String mot) {
-		if (!map.keySet().contains(mot)) System.out.println("Le mot n'existe pas");
-		else {
+		if (map.keySet().contains(mot)){
 			for (String str : map.get(mot)){
 				String[] tab = str.split("	");
 				return tab[1].substring(0, 3);

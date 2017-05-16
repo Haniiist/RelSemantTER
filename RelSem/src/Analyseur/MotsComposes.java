@@ -53,6 +53,14 @@ public class MotsComposes extends TextClass {
 					this.oldText=this.oldText.replace(str,str.replace(" ", "_"));
 				}
 			}
+			for (String str : pr.bold) {
+				if (str.contains(" ")){
+					motsTrouves.add(str);
+					if (!lookUp(str)) 
+						nonExistingWords.add(str);
+					this.oldText=this.oldText.replace(str,str.replace(" ", "_"));
+				}
+			}
 		}
 		this.newText=findMC();
 		if (pr!=null)
@@ -115,35 +123,42 @@ public class MotsComposes extends TextClass {
 		String[] phrase = str.split("[.|;|,|==|\\n|?|!|:|(|)|\\[|\\]|«|»|“|”|\"]+");
 		for(int j=0;j<phrase.length;j++){
 			int i =0;
-			int decalage = 8;
-			String[] s = phrase[j].toString().split("(\\s)+");
+			//if (phrase[j].charAt(phrase[j].length())==" ";
+			String[] s = phrase[j].split(" ");			
+			int mindecalage = Math.max(s.length, 2);
+			int decalage = Math.min(8, mindecalage);
 			Boolean found = false;
+			//System.out.println(phrase[j]);
 			while(s.length>i){
 				String chaine_mots_compose = new String();
-				while((s.length>i) && 
-						Arrays.asList(avoid).contains(s[i].toLowerCase())){
+				while((s.length>i) && Arrays.asList(avoid).contains(s[i].toLowerCase())){
 					i++;
 				}
 				int fenetre =i;
 				int k=0;
 				while(k<decalage  && k+fenetre<s.length){
 					if(!s[k+fenetre].equals("")){
-						chaine_mots_compose= chaine_mots_compose+s[k+fenetre]+" ";
+						chaine_mots_compose = chaine_mots_compose+s[k+fenetre]+" ";	
 					}
 					k++;
-				}
-				if(chaine_mots_compose.length()>0)
-					chaine_mots_compose = chaine_mots_compose.substring(0, chaine_mots_compose.length()-1);
+				}	
+				//chaine_mots_compose = chaine_mots_compose.trim();
+				if (j==512) 
+					System.out.println("Aw wsal");
+				if (chaine_mots_compose.length()>0)
+					chaine_mots_compose = chaine_mots_compose.substring(0,chaine_mots_compose.length()-1);
 				if(motsTrouves.contains(chaine_mots_compose)){
 					i = i+(chaine_mots_compose.split("\\s")).length;
-					decalage=8;
+					decalage = Math.min(8, mindecalage);
 					String compound_word_underscore = new String(chaine_mots_compose);
 					compound_word_underscore=compound_word_underscore.replaceAll("\\s", "_");
 				}
+
 				else{
+					//chaine_mots_compose = chaine_mots_compose.trim();
 					found = lookUp(chaine_mots_compose);
 					if(found){
-						motsTrouves.add(chaine_mots_compose);
+						motsTrouves.add(chaine_mots_compose.trim());
 						String compound_word_underscore = new String(chaine_mots_compose);
 						for (String b : motsTrouves){
 							if (chaine_mots_compose.contains(b) && chaine_mots_compose.length()>b.length() ){
@@ -152,13 +167,13 @@ public class MotsComposes extends TextClass {
 							}
 						}
 						i = i+(chaine_mots_compose.split("\\s")).length;
-						decalage=8;
+						decalage = Math.min(8, mindecalage);
 						compound_word_underscore=compound_word_underscore.replaceAll("\\s", "_");
 						str = str.replace(chaine_mots_compose, compound_word_underscore);
 					}  
 					else if(decalage==2){
 						i++;
-						decalage=8;
+						decalage = Math.min(8, mindecalage);
 					}
 					else 
 						decalage--;
@@ -169,7 +184,9 @@ public class MotsComposes extends TextClass {
 			System.out.println("***************"+s5);
 		return str;	
 	}
+	
 	public static void main(String[] args) throws Exception {
-		System.out.println((new MotsComposes()).lookUp("difficulté d'initiation"));
+		System.out.println((new MotsComposes()).lookUp("l'identité de sexe"));
+		System.out.println();
 	}
 }

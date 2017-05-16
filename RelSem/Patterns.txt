@@ -1,20 +1,35 @@
 Hyperonymie : 
 $x est un $y
 $x sont des $y
+$x est un des $y
+$x est une des $y
 $x qui est un $y
-$x qui sont des $y
-$x qui sont des $y 
+$x qui est un des $y
+$x qui est une des $y 
+$x , qui est un $y
+$x , qui est un des $y
+$x , qui est une des $y  
+$x est une forme rare et grave de $y
 $x est également un $y
 $x est aussi un $y 
 $x est une $y
 $x est aussi une $y  
-$x est une sorte_de $y
+$x est une sorte de $y
 $x est un genre de $y 
 $x est de la famille des $y
 $x est de la famille de la $y
 $x est de la famille du $y
 $x c'est-à-dire une $y 
 $x c'est-à-dire un $y 
+$x est un ensemble de $y
+$x éventuellement aussi appelée $y
+$x éventuellement aussi appelé $y
+$x est éventuellement aussi appelée $y
+$x est éventuellement aussi appelée $y
+$x éventuellement aussi appelée $y , ou $z
+$x éventuellement aussi appelé $y , ou $z
+$x est éventuellement aussi appelée $y , ou $z
+$x est éventuellement aussi appelée $y , ou $z 
 
 Holonymie :
 $x a des $y 
@@ -130,14 +145,22 @@ $x génère un  $y
 $x entraine des $y
 $x entraine un $y
 $x entraine une $y
-$x entraine des $y et $z
-$x entraine un $y et $z
-$x entraine une $y et $z
+$x entraine des $y , $z
+$x entraine un $y , $z
+$x entraine une $y , $z
+$x entraine des $y et des $z
+$x entraine un $y et un $z
+$x entraine un $y et une $z
+$x entraine une $y et un $z
+$x entraine une $y et une $z
 $x peuvent provoquer une $z
 $x peut provoquer une $z
 $x génère une $y
 $x génère un $y
 $x génère des $y
+$x génère une $y , des $z
+$x génère un $y , des $z
+$x génère des $y , des $z
 $x génère une $y et des $z
 $x génère un $y et des $z
 $x génère des $y et des $z
@@ -185,9 +208,10 @@ $x est provoquée par une $y
 $x est provoqué par des $y 
 $x est provoquée par des $y
 
+
 Possession : 
-$x a un $y
-$x a une $y
+$x a un $y --> $x:[Nom]
+$x a une $y --> $x:[Nom]
 $x a des $y
 $x possède une $y
 $x possède un $y
@@ -207,7 +231,6 @@ $x possède un $y
 
 Opposition :
 $x est l'inverse de $y
-$x s'oppose à $y
 
 Localisation :
 $x au niveau de $y
@@ -217,38 +240,42 @@ $x se trouve souvent localisées au niveau de la $y
 $x se trouvent localisées au niveau de la $y
 $x se trouve localisées au niveau de la $y
 $x se trouvent souvent localisées au niveau de la $y , de la $z
-$x se trouve souvent localisées au niveau de la $y de la $z
-$x se trouvent localisées au niveau de la $y de la $z
-$x se trouve localisées au niveau de la $y de la $z
+$x se trouve souvent localisées au niveau de la $y , de la $z
+$x se trouvent localisées au niveau de la $y , de la $z
+$x se trouve localisées au niveau de la $y , de la $z
 $x se trouvent souvent localisées au niveau de la $y de la $z et de la $w
 $x se trouve souvent localisées au niveau de la $y , de la $z et de la $w
-$x se trouvent localisées au niveau de la $y de la $z et de la $w
-$x se trouve localisées au niveau de la $y de la $z et de la $w
+$x se trouvent localisées au niveau de la $y , de la $z et de la $w
+$x se trouve localisées au niveau de la $y , de la $z et de la $w
 
 Accompagnement :
-$x associé à des $y
-$x associé à un $y
-$x associé à une $y
-$x associée à des $y
-$x associée à un $y
-$x associée à une $y
-$x est associé à des $y
-$x est associé à un $y
-$x est associé à une $y
-$x est associée à des $y
-$x est associée à un $y
-$x est associée à une $y
-$x s'accompagne d'un $y
-$x s'accompagne d'une $y
-$x s'accompagne de $y
-$x est souvent accompagné par $y
-$x est souvent accompagnée par $y
-$x accompagné par $y
-$x accompagnée par $y
-$x est souvent accompagné de $y
-$x est souvent accompagnée de $y
-$x accompagné de $y
-$x accompagnée de $y
+$x associé à des $y --> $x:[Nom]
+$x associé à un $y --> $x:[Nom]
+$x associé à une $y --> $x:[Nom]
+$x associée à des $y --> $x:[Nom]
+$x associée à un $y --> $x:[Nom]
+$x associée à une $y --> $x:[Nom]
+$x est associé à des $y --> $x:[Nom]
+$x est associé à un $y --> $x:[Nom]
+$x est associé à une $y --> $x:[Nom]
+$x est associée à des $y --> $x:[Nom]
+$x est associée à un $y --> $x:[Nom]
+$x est associée à une $y --> $x:[Nom]
+$x s'accompagne d'un $y --> $x:[Nom]
+$x s'accompagne d'une $y --> $x:[Nom]
+$x s'accompagne de $y --> $x:[Nom]
+$x est souvent accompagné par $y --> $x:[Nom]
+$x est souvent accompagnée par $y --> $x:[Nom]
+$x est souvent accompagné de $y --> $x:[Nom]
+$x est souvent accompagnée de $y --> $x:[Nom]
+$x souvent accompagné par $y --> $x:[Nom]
+$x souvent accompagnée par $y --> $x:[Nom]
+$x souvent accompagné de $y --> $x:[Nom]
+$x souvent accompagnée de $y --> $x:[Nom]
+$x accompagné par $y --> $x:[Nom]
+$x accompagnée par $y --> $x:[Nom]
+$x accompagné de $y --> $x:[Nom]
+$x accompagnée de $y --> $x:[Nom]
 
 Traitement :
 $x traité par $y
@@ -301,7 +328,7 @@ $x qui se manifeste par une $y
 $x se manifestent par un $y
 $x qui se manifeste par la $y
 $x qui se manifestent par la $y
-$x a $y pour symptôme $Post
-$x a $y pour symptômes $Post
-$x a $y pour signe $Post
-$x a $y pour signes $Post
+$x rra $y pour symptôme
+$x rra $y pour symptômes
+$x rra $y pour signe
+$x rra $y pour signes

@@ -86,7 +86,7 @@ public class Parser extends TextClass {
         str=matcher.replaceAll("");
         
     
-        pattern = Pattern.compile("(<ref(.|\n)*?\\/ref>)+?|\\[\\[Catégorie:((.)+?)\\]\\]|\\[\\[Fichier:((.)+?)\\]\\]\n|\\[http((.)+?)\\]|<!--(.)?-->");
+        pattern = Pattern.compile("(<ref(.|\n)*?\\/ref>)+?|\\[\\[Catégorie:((.)+?)\\]\\]|\\[\\[Fichier:((.)+?)\\]\\]\n|\\[\\[File:((.)+?)\\]\\]\n|\\[http((.)+?)\\]|<!--(.)?-->");
         matcher = pattern.matcher(str);
         while (matcher.find()) {
             String group = matcher.group(0);
@@ -108,7 +108,7 @@ public class Parser extends TextClass {
         	String group = matcher.group(0);
         	String group1 = matcher.group(1);
         	str=str.replace(group, group1);
-            	linksWiki.add(group1);            
+            	linksWiki.add(group1.trim());            
     	}
     
     	pattern = Pattern.compile("\\[\\[((.)+?\\|((.)+?))\\]\\]");
@@ -119,13 +119,13 @@ public class Parser extends TextClass {
         	str=str.replace(group, group1);
         	group=group.replace(group1, "");
                 deleted.add(group);
-        	linksWiki.add(group1);
+        	linksWiki.add(group1.trim());
     	}
     
     
     	str=str.replaceAll("<br(\\s)*?/>","\n");
     
-        pattern = Pattern.compile("''((.)+)''");
+        pattern = Pattern.compile("''((.)+?)''");
         matcher = pattern.matcher(str);
     	while (matcher.find()) {
             	String group = matcher.group(1);
@@ -134,11 +134,11 @@ public class Parser extends TextClass {
             		italic.add(group);
             	}
             else if (group.charAt(1)!='\'') {
-            	group = group.substring(1, group.length()-1); 
+            	group = group.substring(1, group.length()); 
             	if (group.length()>1) 
-            		bold.add(group);
+            		bold.add(group.trim());
             	}
-            else {
+            else if (group.charAt(2)=='\''){
             	group = group.substring(3,group.length()-3); 
             	if (group.length()>1) 
             		boldItalic.add(group);
@@ -175,14 +175,21 @@ public class Parser extends TextClass {
     	str=str.replaceAll("(\n){3,}","\n\n");
     	str=str.replace("."," .");
     	str=str.replace(","," ,");
+    	str=str.replace("l'","l' ");
+    	str=str.replace("L'","L' ");
+    	str=str.replace("s'","s' ");
+    	str=str.replace("S'","S' ");
+    	str=str.replace(","," ,");
     	str=str.replace("’","'");
     	str=str.replace("(,)+",",");
+    	str=str.replace(" "," ");
     	str=str.trim();
 		return str;
 		
 	}
 		
 	public String cleanText(String str){
+		
 		Pattern pattern = Pattern.compile("\\{\\{Lang\\|\\w\\w\\|((.)+?)\\}\\}");
 		Matcher matcher = pattern.matcher(str);
     	while (matcher.find()) {
@@ -192,7 +199,7 @@ public class Parser extends TextClass {
         	group=group.replace(group1, "");
             deleted.add(group);
         }
-    	
+    
         pattern = Pattern.compile("\\{\\{\\w\\w\\}\\}");
         matcher = pattern.matcher(str);
         while (matcher.find()) {
@@ -228,7 +235,7 @@ public class Parser extends TextClass {
         str=matcher.replaceAll("");
         
     
-        pattern = Pattern.compile("(<ref(.|\n)*?\\/ref>)+?|\\[\\[Catégorie:((.)+?)\\]\\]|\\[\\[Fichier:((.)+?)\\]\\]\n|\\[http((.)+?)\\]|<!--(.)?-->");
+        pattern = Pattern.compile("(<ref(.|\n)*?\\/ref>)+?|\\[\\[Catégorie:((.)+?)\\]\\]|\\[\\[Fichier:((.)+?)\\]\\]\n|\\[\\[File:((.)+?)\\]\\]\n|\\[http((.)+?)\\]|<!--(.)?-->");
         matcher = pattern.matcher(str);
         while (matcher.find()) {
             String group = matcher.group(0);
@@ -250,7 +257,7 @@ public class Parser extends TextClass {
         	String group = matcher.group(0);
         	String group1 = matcher.group(1);
         	str=str.replace(group, group1);
-            	linksWiki.add(group1);            
+            	linksWiki.add(group1.trim());            
     	}
     
     	pattern = Pattern.compile("\\[\\[((.)+?\\|((.)+?))\\]\\]");
@@ -261,32 +268,31 @@ public class Parser extends TextClass {
         	str=str.replace(group, group1);
         	group=group.replace(group1, "");
                 deleted.add(group);
-        	linksWiki.add(group1);
+        	linksWiki.add(group1.trim());
     	}
     
     
     	str=str.replaceAll("<br(\\s)*?/>","\n");
     
-        pattern = Pattern.compile("[a-zA-Z\\s]''((.)+?)''\\s");
+        pattern = Pattern.compile("''((.)+?)''");
         matcher = pattern.matcher(str);
     	while (matcher.find()) {
             	String group = matcher.group(1);
-            if (group.charAt(group.length()-1)!='\'') {
+            if (group.charAt(0)!='\'') {
             	if (group.length()>1) 
             		italic.add(group);
             	}
-            else if (group.charAt(group.length()-2)!='\'') {
-            	group = group.substring(1, group.length()-1); 
+            else if (group.charAt(1)!='\'') {
+            	group = group.substring(1, group.length()); 
             	if (group.length()>1) 
             		bold.add(group);
             	}
-            else {
+            else if (group.charAt(2)=='\''){
             	group = group.substring(3,group.length()-3); 
-            	if (group.length()>1) boldItalic.add(group);
+            	if (group.length()>1) 
+            		boldItalic.add(group);
             	}
         }
-    	str=str.replaceAll("l(')+","l'");
-    	str=str.replaceAll("L(')+","L'");
         str=str.replaceAll("('){2,}","");
     
         pattern = Pattern.compile("==((.)+)==");
@@ -318,8 +324,13 @@ public class Parser extends TextClass {
     	str=str.replaceAll("(\n){3,}","\n\n");
     	str=str.replace("."," .");
     	str=str.replace(","," ,");
+    	str=str.replace("l'","l' ");
+    	str=str.replace("L'","L' ");
+    	str=str.replace("s'","s' ");
+    	str=str.replace("S'","S' ");
     	str=str.replace("’","'");
     	str=str.replace("(,)+",",");
+    	str=str.replace(" "," ");
     	str=str.trim();
 		return str;
 		
@@ -333,14 +344,18 @@ public class Parser extends TextClass {
 		
 		Parser c = new Parser();
 		
-		File file = new File("Text.txt");
+		File file = new File("/auto_home/msebih/Articles/D/Dépression (psychiatrie).txt");
 		FileInputStream fis = new FileInputStream(file);
 		byte[] data = new byte[(int) file.length()];
 		fis.read(data);
 		fis.close();
 		String str = new String(data, "UTF-8");
-		
+		str=c.cleanText(str);
+		//System.out.println(str);
 		System.out.println(c.cleanText(str));
+		
+		for (String s : c.linksWiki)
+			System.out.println(s);
 			
 	}
 
