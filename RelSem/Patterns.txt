@@ -276,6 +276,11 @@ $x accompagné par $y --> $x:[Nom]
 $x accompagnée par $y --> $x:[Nom]
 $x accompagné de $y --> $x:[Nom]
 $x accompagnée de $y --> $x:[Nom]
+$x est lié_à $y --> $x:[Nom]
+$x est liée à $y --> $x:[Nom]
+$x sont liés à $y --> $x:[Nom]
+$x sont liées à $y --> $x:[Nom]
+$x est lié de_manière_significative à l' $y --> $x:[Nom]
 
 Traitement :
 $x traité par $y

@@ -156,7 +156,7 @@ public class MotsComposes extends TextClass {
 
 				else{
 					//chaine_mots_compose = chaine_mots_compose.trim();
-					found = lookUp(chaine_mots_compose);
+					found = lookUp(chaine_mots_compose.replace("l' ", "l'").replace("s' ", "s'"));
 					if(found){
 						motsTrouves.add(chaine_mots_compose.trim());
 						String compound_word_underscore = new String(chaine_mots_compose);

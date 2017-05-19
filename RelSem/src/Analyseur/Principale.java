@@ -13,7 +13,7 @@ public class Principale {
 
 	public static void main(String[] args) throws IOException {
 		fetchPatrons ("Patterns.txt");
-		Analyseur analyseurDeTest=new Analyseur("/auto_home/msebih/Articles/T/Transsexualisme.txt");
+		Analyseur analyseurDeTest=new Analyseur("/auto_home/msebih/Articles/D/Dépression (psychiatrie).txt");
 		//Analyseur analyseurDeTest=new Analyseur("Text.txt");
 		analyseurDeTest.analyser();
 		for (Relation relation : analyseurDeTest.getRelations_trouvees()) {

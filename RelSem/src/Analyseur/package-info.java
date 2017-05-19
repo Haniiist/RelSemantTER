@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author TOSHIBA
- *
- */
-package Analyseur;
