@@ -1,0 +1,347 @@
+Hyperonymie :
+$x , qui est un $y
+$x , qui est un des $y
+$x , qui est une $y
+$x , qui est une des $y
+$x , qui est l' $y
+$x , qui est la $y
+$x , qui est le $y
+$x , qui sont l' $y
+$x , qui sont la $y
+$x , qui sont le $y
+$x , qui sont des $y
+$x , qui sont les $y
+$x , qui sont un des $y
+$x , qui sont une des $y
+$x c'est-à-dire un $y 
+$x c'est-à-dire une $y 
+$x est aussi un $y 
+$x est aussi une $y  
+$x est de la famille de la $y
+$x est de la famille des $y
+$x est de la famille du $y
+$x est un $y
+$x est un des $y
+$x est un ensemble de $y
+$x est un genre de $y 
+$x est une $y
+$x est une des $y
+$x est une forme rare et grave de $y
+$x est une sorte de $y
+$x est également un $y
+$x est éventuellement aussi appelée $y
+$x est éventuellement aussi appelée $y
+$x est éventuellement aussi appelée $y , ou $z
+$x est éventuellement aussi appelée $y , ou $z 
+$x qui est un $y
+$x qui est un des $y
+$x qui est une des $y 
+$x sont des $y
+$x éventuellement aussi appelé $y
+$x éventuellement aussi appelé $y , ou $z
+$x éventuellement aussi appelée $y
+$x éventuellement aussi appelée $y , ou $z
+
+Holonymie :
+$x a comme partie la $y 
+$x a comme partie le $y 
+$x a des $y 
+$x a un $y
+$x a une $y
+$x composé d'un $y
+$x composé d'une $y
+$x composé de $y
+$x composé de $y et de $z
+$x composé de la $y
+$x composé du $y
+$x composée d'un $y
+$x composée d'une $y
+$x composée de $y
+$x composée de la $y
+$x composée du $y
+$x constitué d'un $y
+$x constitué d'une $y
+$x constitué d'une $y et d'un $z
+$x constitué de $y
+$x constitué de la $y
+$x constitué du $y
+$x constituée d'un $y
+$x constituée d'une $y
+$x constituée de $y
+$x constituée de la $y
+$x constituée du $y
+$x est composé d'un $y
+$x est composé d'une $y
+$x est composé de $y
+$x est composé de la $y
+$x est composé du $y
+$x est composée d'un $y
+$x est composée d'une $y
+$x est composée de $y
+$x est composée de la $y
+$x est composée du $y
+$x est constitué d'un $y
+$x est constitué d'une $y
+$x est constitué de $y
+$x est constitué de la $y
+$x est constitué du $y
+$x est constituée d'un $y
+$x est constituée d'une $y
+$x est constituée de $y
+$x est constituée de la $y
+$x est constituée du $y
+$x qui a des $y 
+$x qui a un $y
+$x qui a une $y    
+$x se compose de $y
+$x se compose de la $y
+$x se compose du $y
+
+Méronymie :
+$x compose la $y
+$x compose le $y
+$x compose les $y
+$x constitue la $y
+$x constitue le $y
+$x constitue les $y
+$x est partie de $y
+$x est partie de la $y
+$x est partie du $y
+$x est une partie de $y
+$x est une partie de la $y
+$x est une partie du $y
+$x fait partie de $y
+$x fait partie de la $y
+$x fait partie des $y
+$x fait partie du $y
+$x forme la $y
+$x forme le $y
+$x forme les $y
+
+Causalité/Cause : 
+$x affecte $y
+$x affecte la $y
+$x affecte le $y
+$x affecte les $y
+$x cause un $y 
+$x déclenchant des $y 
+$x déclenchant la $y 
+$x déclenchant les $y 
+$x déclenchant un $y 
+$x déclenchant une $y 
+$x entraine des $y
+$x entraine des $y , $z
+$x entraine des $y et des $z
+$x entraine un $y
+$x entraine un $y , $z
+$x entraine un $y et un $z
+$x entraine un $y et une $z
+$x entraine une $y
+$x entraine une $y , $z
+$x entraine une $y et un $z
+$x entraine une $y et une $z
+$x génère des $y
+$x génère des $y , des $z
+$x génère des $y et des $z
+$x génère un  $y
+$x génère un $y
+$x génère un $y , des $z
+$x génère un $y et des $z
+$x génère une  $y
+$x génère une $y
+$x génère une $y , des $z
+$x génère une $y et des $z
+$x menant au $y
+$x menant aux $y
+$x menant à la $y
+$x menant à un $y
+$x menant à une $y
+$x n'affecte que la $y
+$x n'affecte que le $y
+$x n'affecte que les $y
+$x peut produire des $y
+$x peut produire la $y
+$x peut produire les $y
+$x peut produire un $y
+$x peut produire une $y
+$x peut provoquer une $z
+$x peut être provoqué par un $y   
+$x peut être provoqué par une $y
+$x peut être provoquée par un $y 
+$x peut être provoquée par une $y 
+$x peuvent provoquer une $z
+$x provient de la $y
+$x provient du $y
+$x provoque la $y 
+$x provoque le $y
+$x provoque un $y
+
+Causalité/Effet : 
+$x dû au $y
+$x dû aux $y
+$x dû à $y
+$x dû à des $y
+$x dû à un $y
+$x dû à une $y
+$x dûe au $y
+$x dûe aux $y
+$x dûe à $y
+$x dûe à des $y
+$x dûe à un $y
+$x dûe à une $y
+$x est causé par $y 
+$x est causé par des $y 
+$x est causé par la $y 
+$x est causé par le $y 
+$x est causé par les $y 
+$x est causé par un $y 
+$x est causé par une $y 
+$x est causée par $y 
+$x est causée par des $y
+$x est causée par la $y
+$x est causée par le $y
+$x est causée par les $y
+$x est causée par un $y
+$x est causée par une $y
+$x est provoqué par $y
+$x est provoqué par des $y 
+$x est provoqué par la $y 
+$x est provoqué par le $y 
+$x est provoqué par les $y 
+$x est provoqué par un $y 
+$x est provoqué par une $y 
+$x est provoquée par $y
+$x est provoquée par des $y
+$x est provoquée par la $y
+$x est provoquée par le $y
+$x est provoquée par les $y
+$x est provoquée par un $y
+$x est provoquée par une $y
+
+Possession : 
+$x a des $y
+$x a un $y --> $x:[Nom]
+$x a une $y --> $x:[Nom]
+$x possède un $y
+$x possède une $y
+
+Caractérisation :
+$x est $y --> $y:[Adj]
+$x est caractérisé par $y
+$x est caractérisé par un $y
+$x est caractérisé par une $y
+$x possède un $y
+$x possède une $y
+$x se caractérise par $y
+$x se caractérise par un $y
+$x se caractérise par une $y
+$x à base de $y
+
+Opposition :
+$x est l'inverse de $y
+
+Localisation :
+$x au niveau de $y
+$x se trouve dans $y
+$x se trouve localisées au niveau de la $y
+$x se trouve localisées au niveau de la $y , de la $z
+$x se trouve localisées au niveau de la $y , de la $z et de la $w
+$x se trouve souvent localisées au niveau de la $y
+$x se trouve souvent localisées au niveau de la $y , de la $z
+$x se trouve souvent localisées au niveau de la $y , de la $z et de la $w
+$x se trouvent localisées au niveau de la $y
+$x se trouvent localisées au niveau de la $y , de la $z
+$x se trouvent localisées au niveau de la $y , de la $z et de la $w
+$x se trouvent souvent localisées au niveau de la $y
+$x se trouvent souvent localisées au niveau de la $y , de la $z
+$x se trouvent souvent localisées au niveau de la $y de la $z et de la $w
+
+Accompagnement :
+$x accompagné de $y --> $x:[Nom]
+$x accompagné par $y --> $x:[Nom]
+$x accompagnée de $y --> $x:[Nom]
+$x accompagnée par $y --> $x:[Nom]
+$x associé à des $y --> $x:[Nom]
+$x associé à un $y --> $x:[Nom]
+$x associé à une $y --> $x:[Nom]
+$x associée à des $y --> $x:[Nom]
+$x associée à un $y --> $x:[Nom]
+$x associée à une $y --> $x:[Nom]
+$x est associé à des $y --> $x:[Nom]
+$x est associé à un $y --> $x:[Nom]
+$x est associé à une $y --> $x:[Nom]
+$x est associée à des $y --> $x:[Nom]
+$x est associée à un $y --> $x:[Nom]
+$x est associée à une $y --> $x:[Nom]
+$x est lié de_manière_significative à l' $y --> $x:[Nom]
+$x est lié_à $y --> $x:[Nom]
+$x est liée à $y --> $x:[Nom]
+$x est souvent accompagné de $y --> $x:[Nom]
+$x est souvent accompagné par $y --> $x:[Nom]
+$x est souvent accompagnée de $y --> $x:[Nom]
+$x est souvent accompagnée par $y --> $x:[Nom]
+$x s'accompagne d'un $y --> $x:[Nom]
+$x s'accompagne d'une $y --> $x:[Nom]
+$x s'accompagne de $y --> $x:[Nom]
+$x sont liées à $y --> $x:[Nom]
+$x sont liés à $y --> $x:[Nom]
+$x souvent accompagné de $y --> $x:[Nom]
+$x souvent accompagné par $y --> $x:[Nom]
+$x souvent accompagnée de $y --> $x:[Nom]
+$x souvent accompagnée par $y --> $x:[Nom]
+
+Traitement :
+$x a $y comme traitement_médical $Post
+$x couramment traité par la $y
+$x couramment traité par le $y
+$x couramment traité par un $y
+$x couramment traité par une $y
+$x couramment traitée par la $y
+$x couramment traitée par le $y
+$x couramment traitée par un $y
+$x couramment traitée par une $y
+$x est couramment traité par la $y
+$x est couramment traité par le $y
+$x est couramment traité par un $y
+$x est couramment traité par une $y
+$x est couramment traitée par la $y
+$x est couramment traitée par le $y
+$x est couramment traitée par un $y
+$x est couramment traitée par une $y
+$x est traité par la $y
+$x est traité par le $y
+$x est traité par un $y
+$x est traité par une $y
+$x est traitée par la $y
+$x est traitée par le $y
+$x est traitée par un $y
+$x est traitée par une $y
+$x peut être corrigé par un $y
+$x peut être corrigé par une $y
+$x peut être corrigée par un $y
+$x peut être corrigée par une $y
+$x soigné par $y
+$x soignée par $y
+$x traité par $y
+$x traité par la $y
+$x traité par le $y
+$x traité par un $y
+$x traité par une $y
+$x traitée par $y
+$x traitée par la $y
+$x traitée par le $y
+$x traitée par un $y
+$x traitée par une $y
+
+Signe :
+$x a $y pour signe $Post
+$x a $y pour signes $Post
+$x a $y pour symptôme $Post
+$x a $y pour symptômes $Post
+$x qui se manifeste par la $y
+$x qui se manifeste par un $y
+$x qui se manifeste par une $y
+$x qui se manifestent par la $y
+$x se manifeste par un $y
+$x se manifeste par une $y
+$x se manifestent par un $y
