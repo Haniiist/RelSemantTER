@@ -1,4 +1,5 @@
-package Analyseur;
+package sam;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -40,10 +41,169 @@ public class Analyseur {
 		}
 
 	}
-
-	public void analyser() throws IOException{
+	
+	public void analyserParMc() throws IOException{
 		long startTime = System.currentTimeMillis();
-		this.pretraitement();
+		this.pretraitementParMc();
+		long stopTime = System.currentTimeMillis();
+		System.out.println(stopTime - startTime);
+		startTime = System.currentTimeMillis(); 
+		//System.out.println(this.text);
+		for (String type : Relation.types_de_relations) {
+			long startTimeP = System.currentTimeMillis();
+			for (String patron : Relation.typePatrons.get(type)) {
+				// Construction de la Regex pour l'extraction des termes
+				String strExpReg = "";
+				boolean postPatron = false;
+				if (patron.endsWith("$Post")) {
+					postPatron=true;
+					patron = patron.replace("$Post", "");
+				}
+				for (int i = 0; i < patron.split("\\$").length; i++) {
+					strExpReg+="("+motFr+"+)\\s"
+							+patron.split("\\$")[i].replace(" ", "\\s")+"\\s";
+				}
+				if (!postPatron) {
+					strExpReg+="("+motFr+"+)";
+				}
+				else {
+					strExpReg = strExpReg.substring(0,strExpReg.length()-2);
+					patron = patron+"$Post";
+				}
+
+				Pattern ExpReg= Pattern.compile(strExpReg);
+				Matcher matcher = ExpReg.matcher(this.text);
+				while (matcher.find()){
+					for (int i = 2; i <= Relation.patronNbrTerms.get(patron); i++) {
+						// Test si il n'y a pas confusion entre patrons
+						if (unique(type,matcher.group(1),patron,matcher.group(i),matcher.group())) {
+							// Test d'ambiguitï¿½ et dï¿½sambiguation (par contraintes sï¿½mantiques)
+							if (!isAmbigu(patron) || type.equals(this.desambiguation(type,patron,matcher.group(1), matcher.group(i)))) {
+								if (!underConstraint(type, patron) || semanticConstraint(type,matcher.group(1),patron,matcher.group(i))){
+									Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i),matcher.group()));									
+								}
+
+							}
+						}
+					}
+				}
+			}
+			long stopTimeP = System.currentTimeMillis();
+			System.out.println("Temps d'éxécution pour "+type+" : "+(stopTimeP - startTimeP));
+		}
+		stopTime = System.currentTimeMillis();
+		System.out.println(stopTime - startTime);
+	}
+
+	public void analyserParLem() throws IOException{
+		long startTime = System.currentTimeMillis();
+		this.pretraitementParLem();
+		long stopTime = System.currentTimeMillis();
+		System.out.println(stopTime - startTime);
+		startTime = System.currentTimeMillis(); 
+		//System.out.println(this.text);
+		for (String type : Relation.types_de_relations) {
+			long startTimeP = System.currentTimeMillis();
+			for (String patron : Relation.typePatrons.get(type)) {
+				// Construction de la Regex pour l'extraction des termes
+				String strExpReg = "";
+				boolean postPatron = false;
+				if (patron.endsWith("$Post")) {
+					postPatron=true;
+					patron = patron.replace("$Post", "");
+				}
+				for (int i = 0; i < patron.split("\\$").length; i++) {
+					strExpReg+="("+motFr+"+)\\s"
+							+patron.split("\\$")[i].replace(" ", "\\s")+"\\s";
+				}
+				if (!postPatron) {
+					strExpReg+="("+motFr+"+)";
+				}
+				else {
+					strExpReg = strExpReg.substring(0,strExpReg.length()-2);
+					patron = patron+"$Post";
+				}
+
+				Pattern ExpReg= Pattern.compile(strExpReg);
+				Matcher matcher = ExpReg.matcher(this.text);
+				while (matcher.find()){
+					for (int i = 2; i <= Relation.patronNbrTerms.get(patron); i++) {
+						// Test si il n'y a pas confusion entre patrons
+						if (unique(type,matcher.group(1),patron,matcher.group(i),matcher.group())) {
+							// Test d'ambiguitï¿½ et dï¿½sambiguation (par contraintes sï¿½mantiques)
+							if (!isAmbigu(patron) || type.equals(this.desambiguation(type,patron,matcher.group(1), matcher.group(i)))) {
+								if (!underConstraint(type, patron) || semanticConstraint(type,matcher.group(1),patron,matcher.group(i))){
+									Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i),matcher.group()));									
+								}
+
+							}
+						}
+					}
+				}
+			}
+			long stopTimeP = System.currentTimeMillis();
+			System.out.println("Temps d'éxécution pour "+type+" : "+(stopTimeP - startTimeP));
+		}
+		stopTime = System.currentTimeMillis();
+		System.out.println(stopTime - startTime);
+	}
+	
+	public void analyserParMcLem() throws IOException{
+		long startTime = System.currentTimeMillis();
+		this.pretraitementParMcLem();
+		long stopTime = System.currentTimeMillis();
+		System.out.println(stopTime - startTime);
+		startTime = System.currentTimeMillis(); 
+		//System.out.println(this.text);
+		for (String type : Relation.types_de_relations) {
+			long startTimeP = System.currentTimeMillis();
+			for (String patron : Relation.typePatrons.get(type)) {
+				// Construction de la Regex pour l'extraction des termes
+				String strExpReg = "";
+				boolean postPatron = false;
+				if (patron.endsWith("$Post")) {
+					postPatron=true;
+					patron = patron.replace("$Post", "");
+				}
+				for (int i = 0; i < patron.split("\\$").length; i++) {
+					strExpReg+="("+motFr+"+)\\s"
+							+patron.split("\\$")[i].replace(" ", "\\s")+"\\s";
+				}
+				if (!postPatron) {
+					strExpReg+="("+motFr+"+)";
+				}
+				else {
+					strExpReg = strExpReg.substring(0,strExpReg.length()-2);
+					patron = patron+"$Post";
+				}
+
+				Pattern ExpReg= Pattern.compile(strExpReg);
+				Matcher matcher = ExpReg.matcher(this.text);
+				while (matcher.find()){
+					for (int i = 2; i <= Relation.patronNbrTerms.get(patron); i++) {
+						// Test si il n'y a pas confusion entre patrons
+						if (unique(type,matcher.group(1),patron,matcher.group(i),matcher.group())) {
+							// Test d'ambiguitï¿½ et dï¿½sambiguation (par contraintes sï¿½mantiques)
+							if (!isAmbigu(patron) || type.equals(this.desambiguation(type,patron,matcher.group(1), matcher.group(i)))) {
+								if (!underConstraint(type, patron) || semanticConstraint(type,matcher.group(1),patron,matcher.group(i))){
+									Relations_trouvees.add(new Relation(type, matcher.group(1), matcher.group(i),matcher.group()));									
+								}
+
+							}
+						}
+					}
+				}
+			}
+			long stopTimeP = System.currentTimeMillis();
+			System.out.println("Temps d'éxécution pour "+type+" : "+(stopTimeP - startTimeP));
+		}
+		stopTime = System.currentTimeMillis();
+		System.out.println(stopTime - startTime);
+	}
+	
+	public void analyserParLemMc() throws IOException{
+		long startTime = System.currentTimeMillis();
+		this.pretraitementParLemMc();
 		long stopTime = System.currentTimeMillis();
 		System.out.println(stopTime - startTime);
 		startTime = System.currentTimeMillis(); 
@@ -229,7 +389,20 @@ public class Analyseur {
 	}
 
 
-	public void pretraitement() throws IOException{
+	public void pretraitementParMc() throws IOException{
+		/*
+		 * PrÃ©traitements. 
+		 */
+		this.parser();
+		//this.mots_composes(p);
+		//this.lemmatisation(p);
+		this.mots_composes(p);
+		System.out.println(" mots composes "+mc.newText);
+		this.text = new String(mc.newText);
+		//this.text=this.text.replaceAll("[.|;|,|==|\\n|?|!|:|(|)|\\[|\\]|«|»|“|”]", "");
+	}
+	
+	public void pretraitementParLem() throws IOException{
 		/*
 		 * PrÃ©traitements. 
 		 */
@@ -242,7 +415,32 @@ public class Analyseur {
 		//this.text=this.text.replaceAll("[.|;|,|==|\\n|?|!|:|(|)|\\[|\\]|«|»|“|”]", "");
 	}
 
-
+	public void pretraitementParMcLem() throws IOException{
+		/*
+		 * PrÃ©traitements. 
+		 */
+		this.parser();
+		//this.mots_composes(p);
+		//this.lemmatisation(p);
+		this.mots_composes(p);
+		System.out.println(" mots composes "+mc.newText);
+		this.text = new String(mc.newText);
+		//this.text=this.text.replaceAll("[.|;|,|==|\\n|?|!|:|(|)|\\[|\\]|«|»|“|”]", "");
+	}
+	
+	public void pretraitementParLemMc() throws IOException{
+		/*
+		 * PrÃ©traitements. 
+		 */
+		this.parser();
+		//this.mots_composes(p);
+		//this.lemmatisation(p);
+		this.mots_composes(p);
+		System.out.println(" mots composes "+mc.newText);
+		this.text = new String(mc.newText);
+		//this.text=this.text.replaceAll("[.|;|,|==|\\n|?|!|:|(|)|\\[|\\]|«|»|“|”]", "");
+	}
+	
 	public void parser(){
 		/*
 		 * Nettoyage du contenu tÃ©lÃ©chargÃ© (HTML ou autre). 
@@ -268,7 +466,7 @@ public class Analyseur {
 
 	public void lemmatisation(TextClass TIp){
 		/*
-		 * Mise des verbes conjuguÃ©s Ã  l'infinitif... 	
+		 * Mise des verbes conjuguÃ©s Ã  l'infinitif... 	
 		 */
 
 		lm = new Lemmatisation(TIp);
@@ -289,7 +487,7 @@ public class Analyseur {
 
 	public boolean foundRelation(Relation relation){
 		/*
-		 * VÃ©rifie si une relation a dÃ©jÃ  Ã©tÃ© trouvÃ©e. 
+		 * VÃ©rifie si une relation a dÃ©jÃ  Ã©tÃ© trouvÃ©e. 
 		 */
 		for (Relation relation_trouvee: Relations_trouvees) {
 			if (relation_trouvee.equals(relation)){
