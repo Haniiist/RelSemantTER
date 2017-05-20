@@ -1,4 +1,5 @@
-package Analyseur;
+package sam;
+
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -17,7 +18,7 @@ public class Lemmatisation extends TextClass{
 	static HashMap<String, ArrayList<String>> map;
 
 	public Lemmatisation () throws IOException {
-		createDico("dico.txt");
+		createDico("C:\\Users\\TOSHIBA\\workspace\\Samdi\\dico.txt.txt");
 		oldText=new String();
 		newText=new String();
 	}
@@ -62,7 +63,6 @@ public class Lemmatisation extends TextClass{
 	}
 
 	/*public String lemmatizeVerbsOnly() {
-
 	}*/
 
 	public String lemmatizeText() {
@@ -87,12 +87,24 @@ public class Lemmatisation extends TextClass{
 		String[] s = str.split("\\s|[,.?!:;\\(\\)]+");
 		String res = new String();
 		for (int i=0; i<s.length;i++) {
-			if(!s[i].toLowerCase().equals("est") && !s[i].toLowerCase().equals("sont") && !s[i].toLowerCase().equals("a"))
 				res=res+lemmatize(s[i])+" ";
-			else
-				res=res+s[i]+" ";
+			
 		}
 		res=res.replaceAll("\\s+", " ");
+
+		return res;
+	}
+	
+	public String lemmatizeTextPostMc(String str) {
+		String[] s = str.split("\\s|[,.?!:;\\(\\)]+");
+		String res = new String();
+		for (int i=0; i<s.length;i++) {
+				res=res+lemmatize(s[i])+" ";
+			
+		}
+		res=res.replaceAll("\\s+", " ");
+		res=res.replaceAll(" une | des | le | la | les | l' ", " un ");
+
 		return res;
 	}
 
@@ -146,7 +158,7 @@ public class Lemmatisation extends TextClass{
 	//getLemme("bois") ==> boire
 	//getPos("bois") ==> verb ou nom ou adj pro det 
 	//getLemme("tapis","Nom") ==> tapis         getLemme("tapis","Ver") ==> tapir
-	// penser Ã  dÃ©clencher des exceptions dans les cas ambigus 
+	// penser Ã  dÃ©clencher des exceptions dans les cas ambigus 
 	// pour spliter sur plusieurs caractÃ¨res split(":|+")   "Nom:Mas+SG"  ==>   [0]="Nom" [1]="Mas" [2]="SG"
 
 	public String  detecter(String mot,String s) throws Exception{
@@ -253,8 +265,8 @@ public class Lemmatisation extends TextClass{
 		fis.close();
 		String str = new String(data, "UTF-8");
 		str=str.replaceAll("'","' ");
-		System.out.println(lm.lemmatizeText(str));
-
+		System.out.println(lm.lemmatizeTextPostMc(str));
+		
 
 	}
 
