@@ -1,6 +1,7 @@
 Hyperonymie :
 $x , qui est un $y
 $x , qui est un des $y
+$x , qui est l'un des $y
 $x , qui est une $y
 $x , qui est une des $y
 $x , qui est l' $y
@@ -21,17 +22,21 @@ $x est de la famille de la $y
 $x est de la famille des $y
 $x est de la famille du $y
 $x est un $y
+$x est une $y
+$x est le $y
+$x est la $y
+$x est l' $y
 $x est un des $y
 $x est un ensemble de $y
 $x est un genre de $y 
-$x est une $y
 $x est une des $y
 $x est une forme rare et grave de $y
 $x est une sorte de $y
 $x est également un $y
+$x est également une $y
+$x est éventuellement aussi appelé $y
 $x est éventuellement aussi appelée $y
-$x est éventuellement aussi appelée $y
-$x est éventuellement aussi appelée $y , ou $z
+$x est éventuellement aussi appelé $y , ou $z
 $x est éventuellement aussi appelée $y , ou $z 
 $x qui est un $y
 $x qui est un des $y
