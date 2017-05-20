@@ -1,4 +1,5 @@
 package Analyseur;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -13,6 +14,14 @@ public class Principale {
 
 	public static void main(String[] args) throws IOException {
 		fetchPatrons ("Patterns.txt");
+		Analyseur analyseurDeTest=new Analyseur("D:\\TER\\Articles\\Articles\\D\\Dépression (psychiatrie).txt");
+		//Analyseur analyseurDeTest=new Analyseur("Text.txt");
+		analyseurDeTest.analyserParMc();
+		for (Relation relation : analyseurDeTest.getRelations_trouvees()) {
+			System.out.println("Relation : "+relation.getType()+"("
+											+relation.getTerm1()+","+relation.getTerm2()+")");
+		}
+		/*fetchPatrons ("Patterns.txt");
 		Analyseur analyseurDeTest=new Analyseur("/auto_home/msebih/Articles/D/Dépression (psychiatrie).txt");
 		//Analyseur analyseurDeTest=new Analyseur("Text.txt");
 		analyseurDeTest.analyser();
@@ -20,6 +29,22 @@ public class Principale {
 			System.out.println("Relation : "+relation.getType()+"("
 											+relation.getTerm1()+","+relation.getTerm2()+")");
 		}
+		fetchPatrons ("Patterns.txt");
+		Analyseur analyseurDeTest=new Analyseur("/auto_home/msebih/Articles/D/Dépression (psychiatrie).txt");
+		//Analyseur analyseurDeTest=new Analyseur("Text.txt");
+		analyseurDeTest.analyser();
+		for (Relation relation : analyseurDeTest.getRelations_trouvees()) {
+			System.out.println("Relation : "+relation.getType()+"("
+											+relation.getTerm1()+","+relation.getTerm2()+")");
+		}
+		fetchPatrons ("Patterns.txt");
+		Analyseur analyseurDeTest=new Analyseur("/auto_home/msebih/Articles/D/Dépression (psychiatrie).txt");
+		//Analyseur analyseurDeTest=new Analyseur("Text.txt");
+		analyseurDeTest.analyser();
+		for (Relation relation : analyseurDeTest.getRelations_trouvees()) {
+			System.out.println("Relation : "+relation.getType()+"("
+											+relation.getTerm1()+","+relation.getTerm2()+")");
+		}*/
 	}
 	
 	public static void fetchPatrons (String filePath) throws IOException{
